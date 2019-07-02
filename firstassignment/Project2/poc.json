@@ -1,0 +1,162 @@
+ [
+ 	{
+		"id": "1",
+		"term": "t1",
+		"definition": "d1"
+	}, 
+
+	{
+		"id": "2",
+		"term": "t2",
+		"definition": "d2"
+	}, 
+
+	{
+		"id": "3",
+		"term": "t3",
+		"definition": "d3"
+	},
+
+	{
+		"id": "4",
+		"term": "t4",
+		"definition": "d4"
+	},
+
+	{
+		"id": "5",
+		"term": "t5",
+		"definition": "d5"
+	},
+
+	{
+		"id": "6",
+		"term": "t6",
+		"definition": "d6"
+	},
+
+	{
+		"id": "7",
+		"term": "t7",
+		"definition": "d7"
+	},
+
+	{
+		"id": "8",
+		"term": "t8",
+		"definition": "d8"
+	},
+
+
+	{
+		"id": "9",
+		"term": "t9",
+		"definition": "d9"
+	},
+
+
+	{
+		"id": "10",
+		"term": "t10",
+		"definition": "d10"
+	},
+
+	{
+		"id": "11",
+		"term": "t11",
+		"definition": "d11"
+	},
+
+
+	{
+		"id": "12",
+		"term": "t12",
+		"definition": "d12"
+	},
+
+
+	{
+		"id": "13",
+		"term": "t13",
+		"definition": "d13"
+	},
+
+	{
+		"id": "14",
+		"term": "t14",
+		"definition": "d14"
+	},
+
+
+	{
+		"id": "15",
+		"term": "t15",
+		"definition": "d15"
+	},
+
+
+	{
+		"id": "16",
+		"term": "t16",
+		"definition": "d16"
+	},
+
+	{
+		"id": "17",
+		"term": "t17",
+		"definition": "d17"
+	},
+
+
+	{
+		"id": "18",
+		"term": "t18",
+		"definition": "d18"
+	},
+
+
+	{
+		"id": "19",
+		"term": "t19",
+		"definition": "d19"
+	},
+
+	{
+		"id": "20",
+		"term": "t20",
+		"definition": "d20"
+	},
+
+
+	{
+		"id": "21",
+		"term": "t21",
+		"definition": "d21"
+	},
+
+	{
+		"id": "22",
+		"term": "t22",
+		"definition": "d22"
+	},
+
+	{
+		"id": "23",
+		"term": "t23",
+		"definition": "d23"
+	},
+
+
+	{
+		"id": "24",
+		"term": "t24",
+		"definition": "d24"
+	},
+
+	{
+		"id": "25",
+		"term": "t25",
+		"definition": "d25"
+	}
+
+]
