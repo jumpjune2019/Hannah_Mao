@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+public class IndexMatch {
+	
+	String SearchArray[];
+	String key;
+	boolean foundcase;
+	int result=0;
+	
+
+	int indexOfOccuranceInArray(String SearchArray[],String key, boolean foundcase) {
+		
+		if(foundcase==true) {
+			
+			if(Arrays.asList(SearchArray).contains(key)) {
+		
+				result=true;
+		
+			}
+		}
+		
+		
+		//case insensitive
+		else if(foundcase==false) {
+			
+			for(int i=0; i< SearchArray.length; i++ ) {
+				
+				//SearchArray[i].toUpperCase();
+			    //key=key.toUpperCase();
+			    
+			    if((SearchArray[i].toUpperCase()).equals(key.toUpperCase())) {
+			    	result=true;
+			    	
+			    }
+			    
+			    
+			
+			}		
+			
+		}
+		
+		return result;
+		
+	}
+	
+}

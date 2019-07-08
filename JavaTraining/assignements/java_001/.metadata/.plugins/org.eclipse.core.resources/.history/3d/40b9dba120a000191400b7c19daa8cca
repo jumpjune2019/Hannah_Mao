@@ -1,0 +1,9 @@
+package java3;
+
+public class SimpleDie {
+
+	public SimpleDie() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

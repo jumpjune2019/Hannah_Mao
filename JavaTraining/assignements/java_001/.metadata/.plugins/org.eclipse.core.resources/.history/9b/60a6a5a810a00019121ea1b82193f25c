@@ -1,0 +1,10 @@
+package java2;
+
+public class Tally {
+
+	public Tally() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}

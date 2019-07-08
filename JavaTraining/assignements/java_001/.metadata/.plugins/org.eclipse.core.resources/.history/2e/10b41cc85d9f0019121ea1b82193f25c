@@ -1,0 +1,9 @@
+package java1;
+
+public class Coinflip {
+
+	public Coinflip() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

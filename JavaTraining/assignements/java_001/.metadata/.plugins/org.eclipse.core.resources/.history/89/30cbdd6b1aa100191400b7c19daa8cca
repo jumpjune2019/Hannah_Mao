@@ -1,0 +1,43 @@
+
+public class PairDice {
+
+	double die1;
+	double die2;
+	
+	public PairDice(double x, double y){
+		
+		this.die1=x;
+		this.die2=y;
+		
+		
+	}
+	
+	  
+	  //A method that will return the value of die 
+		double rollfirstdie() {
+			
+			die1=Math.floor(Math.random()*(6-1+1)+1);
+			
+			// System.out.println("You have rolled a: "+ Num);
+			 
+	        return die1;
+	                	
+		}
+		
+		double rollseconddie() {
+			
+			die2=Math.floor(Math.random()*(6-1+1)+1);
+			
+			// System.out.println("You have rolled a: "+ Num);
+			 
+	        return die2;
+	                	
+		}
+		
+	    void setDies(double NewDie1, double NewDie2) {
+		   this.die1= NewDie1;
+		   this.die2= NewDie2;
+			 	
+		}
+
+}

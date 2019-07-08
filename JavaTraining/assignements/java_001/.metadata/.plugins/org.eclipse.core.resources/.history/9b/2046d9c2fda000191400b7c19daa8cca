@@ -1,0 +1,41 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String myList[]= {"Bozo","Foobar","Delta","Foozball","Demo","Money","zoo"};
+		
+		//String search="Bozo";
+		
+		Match mySearch = new Match();
+		
+		boolean Scenario1= mySearch.arrayHasExactMatch(myList,"zo", false);
+		boolean Scenario2= mySearch.arrayHasExactMatch(myList,"zoo", false);
+		boolean Scenario3= mySearch.arrayHasExactMatch(myList,"zoo", true);
+		boolean Scenario4= mySearch.arrayHasExactMatch(myList,"foo", true);
+		boolean Scenario5= mySearch.arrayHasExactMatch(myList,"foo", false);
+		boolean Scenario6= mySearch.arrayHasExactMatch(myList,"delta", true);
+		boolean Scenario7= mySearch.arrayHasExactMatch(myList,"Delta", true);
+		
+		System.out.println(result1);
+		
+		
+        IndexMatch mySearchi = new IndexMatch();
+		
+		int Scenario8= mySearchi.indexOfOccuranceInArray(myList,"zo", false);
+		int Scenario9= mySearchi.indexOfOccuranceInArray(myList,"zoo", false);
+		int Scenario10= mySearchi.indexOfOccuranceInArray(myList,"zoo", true);
+		int Scenario11= mySearchi.indexOfOccuranceInArray(myList,"foo", true);
+		int Scenario12= mySearchi.indexOfOccuranceInArray(myList,"foo", false);
+		int Scenario13= mySearchi.indexOfOccuranceInArray(myList,"delta", true);
+		int Scenario14= mySearchi.indexOfOccuranceInArray(myList,"Delta", true);
+		
+		System.out.println(result2);
+		
+		
+		
+			
+
+	}
+
+}

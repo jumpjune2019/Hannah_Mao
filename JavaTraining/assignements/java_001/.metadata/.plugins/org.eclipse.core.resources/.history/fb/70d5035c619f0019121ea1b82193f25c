@@ -1,0 +1,25 @@
+package java1;
+
+public class Coinflip {
+	
+    double Num;
+    
+	 
+	 
+	double getNum(double Num) {
+		
+		Num=Math.floor(Math.random()*(2-1+1)+1);
+		 
+        return Num;
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+
+}

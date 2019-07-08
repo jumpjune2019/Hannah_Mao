@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class Match {
+
+	public Match() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	boolean foundcase;
+	boolean result;
+	String SearchArray[];
+	String key;
+	
+
+//	public arrayHasExactMatch() {
+//		// TODO Auto-generated constructor stub
+//		
+//		
+//	}
+	
+	boolean arrayHasExactMatch(String SearchArray[],String key, boolean foundcase ) {
+		
+		if(Arrays.asList(SearchArray).contains(key));
+		
+		return true;
+		
+	}
+
+}

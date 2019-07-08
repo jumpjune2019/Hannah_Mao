@@ -1,0 +1,44 @@
+package java2;
+
+
+
+public class Main {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		Tally myObj= new Tally();
+		myObj.flip();
+		
+		int tally[] = new int[2];
+		
+		tally[0]= 0;
+		tally[1]= 0;
+		
+		for (int i=0;i<1000;i++) {
+			
+			//if flip is head
+			if(myObj.flip()==1) {
+				
+				tally[0]++;
+					
+			}
+			//if flip is tail
+			else if(myObj.flip()==2) {
+				
+				tally[1]++;
+					
+			}
+				
+		}
+		
+		System.out.println("1000 Coin Flips");
+		System.out.println("count of Head:"+tally[0]);
+		System.out.println("count of Tail:"+tally[1]);
+		
+	
+	}
+
+}

@@ -1,0 +1,9 @@
+package arrayutils;
+
+public class ArrUtil {
+
+	public ArrUtil() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

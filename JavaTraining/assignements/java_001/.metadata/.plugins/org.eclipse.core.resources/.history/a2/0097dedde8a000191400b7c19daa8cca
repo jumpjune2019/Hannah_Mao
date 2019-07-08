@@ -1,0 +1,8 @@
+
+public class DicePairStats {
+
+	public DicePairStats() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,19 @@
+
+public class IndexMatch {
+	
+	String SearchArray[];
+	String key;
+	boolean foundcase;
+	int foundi=0;
+	
+
+	int indexOfOccuranceInArray(String SearchArray[],String key, boolean foundcase) {
+		
+		
+		
+		return foundi;
+		
+		
+	}
+
+}

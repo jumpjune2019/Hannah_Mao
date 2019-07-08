@@ -1,0 +1,32 @@
+package java3;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+
+public class SimpleDie {
+
+	
+		double Num;
+	
+	  	  
+	  //A method that will return the value of die 
+		double rolldie() {
+			
+			Num=Math.floor(Math.random()*(6-1+1)+1);
+			
+			 System.out.println("You have rolled a: "+ Num);
+			 
+	        return Num;
+	                	
+		}
+		
+	    void setNum(double NewNum) {
+		   this.Num= NewNum;
+			 	
+		}
+	    
+	 
+		
+	 
+}

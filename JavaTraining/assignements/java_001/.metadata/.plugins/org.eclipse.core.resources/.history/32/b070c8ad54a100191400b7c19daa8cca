@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+
+	public static void main(String[] args) {
+		
+		 
+		System.out.println("Welcome to the dice throw challenge!”");
+		System.out.println("Do you feel lucky? Punk... Do ya?");
+		System.out.println("Press and key and Enter to throw your dice or Press(Q or q) to chicken your butt off");
+		
+		
+	    Dice mydie= new Dice();
+	    Dice compdie= new Dice();
+		Scanner s= new Scanner(System.in);
+		
+		while (!s.hasNext("Q")) {
+			
+			
+			//you have rolled a ?
+			System.out.println("Rolling the Dice!!");
+			System.out.println("you have rolled a: "+ mydie.rolldie());
+			System.out.println("I have rolled a: "+ compdie.rolldie());
+			System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+			
+			
+	        //if input are "Y" or "y"
+			if((s.hasNext("Y"))||(s.hasNext("y"))) {
+				
+				System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+						
+			}
+		
+			s.nextLine();	
+			
+            //if input is any other key than "Y" or "y"
+			if(!(s.hasNext("Y")||s.hasNext("y"))) {
+				System.out.println("See ya later alligator!");
+				
+				break;  //quit the game
+		     
+			}		
+
+		}		
+		
+	}
+			
+
+}

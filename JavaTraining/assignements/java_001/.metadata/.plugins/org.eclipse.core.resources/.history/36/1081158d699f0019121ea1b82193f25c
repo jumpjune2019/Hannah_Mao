@@ -1,0 +1,62 @@
+package java1;
+
+public class Coinflip {
+	
+    double Num;
+    String result;
+  
+    
+	 
+	 
+	double flip() {
+		
+		Num=Math.floor(Math.random()*(2-1+1)+1);
+		 
+        return Num;
+        
+		
+	}
+	
+	
+    void setNum(double NewNum) {
+	   this.Num= NewNum;
+		
+       	
+	}
+	
+	void FlipResult(String result) {
+		
+		if (Num==1.0) {
+			
+			result="Head";
+			
+			 System.out.println("The Coin flip is: "+ result);
+			
+		}
+		
+		else if(Num==2.0) {
+			
+			 
+			 result="Tail";
+			 
+			 System.out.println("The Coin fip is: "+result);
+			 
+			
+			
+		}
+		
+		
+	}
+		
+		
+	//}
+
+	
+	
+	
+	
+	
+	
+	
+
+}

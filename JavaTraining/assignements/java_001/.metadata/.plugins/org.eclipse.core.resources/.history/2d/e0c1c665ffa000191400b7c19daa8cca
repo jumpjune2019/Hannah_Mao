@@ -1,0 +1,55 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String myList[]= {"Bozo","Foobar","Delta","Foozball","Demo","Money","zoo"};
+		
+		//String search="Bozo";
+		
+		Match mySearch = new Match();
+		
+		boolean Scenario1= mySearch.arrayHasExactMatch(myList,"zo", false);
+		boolean Scenario2= mySearch.arrayHasExactMatch(myList,"zoo", false);
+		boolean Scenario3= mySearch.arrayHasExactMatch(myList,"zoo", true);
+		boolean Scenario4= mySearch.arrayHasExactMatch(myList,"foo", true);
+		boolean Scenario5= mySearch.arrayHasExactMatch(myList,"foo", false);
+		boolean hello= mySearch.arrayHasExactMatch(myList,"delta", true);
+		boolean Scenario7= mySearch.arrayHasExactMatch(myList,"Delta", true);
+		
+		System.out.println(hello);
+		
+		
+        IndexMatch mySearchi = new IndexMatch();
+		
+		int Scenario8= mySearchi.indexOfOccuranceInArray(myList,"zo", false);
+		int Scenario9= mySearchi.indexOfOccuranceInArray(myList,"zoo", false);
+		int Scenario10= mySearchi.indexOfOccuranceInArray(myList,"zoo", true);
+		int Scenario11= mySearchi.indexOfOccuranceInArray(myList,"foo", true);
+		int Scenario12= mySearchi.indexOfOccuranceInArray(myList,"foo", false);
+		int Scenario13= mySearchi.indexOfOccuranceInArray(myList,"delta", true);
+		int Scenario14= mySearchi.indexOfOccuranceInArray(myList,"Delta", true);
+		
+		//System.out.println(result2);
+		
+		
+		System.out.println("This is a test of the arrayHasExactMatch and indexOfOccurenceInArray methods");
+		System.out.println("The array to test contains the following items");
+		System.out.println("{“Bozo”, “FooBar”, “Delta”, “Foozball”, “Demo”, “Money”, “Zoo”}");
+		
+		System.out.println("\nScenario 1\n"+"arrayHasExactMatch(myList,\"zo\", false): is "+Scenario1);
+		System.out.println("\nScenario 2\n"+"arrayHasExactMatch(myList,\"zoo\", false): is "+Scenario2);
+		System.out.println("\nScenario 3\n"+"arrayHasExactMatch(myList,\"zoo\", true): is "+Scenario3);
+		System.out.println("\nScenario 4\n"+"arrayHasExactMatch(myList,\"foo\", true): is "+Scenario4);
+		System.out.println("\nScenario 5\n"+"arrayHasExactMatch(myList,\"foo\", false): is "+Scenario5);
+		System.out.println("\nScenario 6\n"+"arrayHasExactMatch(myList,\"delta\", true): is "+Scenario6);
+		System.out.println("\nScenario 7\n"+"arrayHasExactMatch(myList,\"Delta\", true): is "+Scenario7);
+		
+		
+		
+		
+			
+
+	}
+
+}

@@ -1,0 +1,52 @@
+package java3;
+
+public class SimpleDie {
+
+	
+		double Num;
+	
+	  	  
+	  //A method that will return the value between one through six
+		double flip() {
+			
+			Num=Math.floor(Math.random()*(6-1+1)+1);
+			
+			 System.out.println("You have rolled a: "+ Num);
+			 
+	        return Num;
+	        
+	       
+	        
+	        
+	        
+	        
+	        	
+		}
+		
+	    void setNum(double NewNum) {
+		   this.Num= NewNum;
+			 	
+		}
+		
+	    //A method that will assign head if "1" is passed, tail if "2" is passed.
+//		void Flipresult(String result) {
+//			
+//			if (Num==1.0) {
+//				
+//				result="Head";
+//				
+//				System.out.println("The Coin flip is: "+ result);
+//				
+//			}
+//			
+//			if(Num==2.0) {
+//				 
+//				 result="Tail";
+//				 
+//				 System.out.println("The Coin fip is: "+result);
+//				 	
+//			}		
+//			
+//		}	
+
+}

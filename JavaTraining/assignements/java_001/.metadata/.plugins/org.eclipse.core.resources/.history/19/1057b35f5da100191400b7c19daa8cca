@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+
+	public static void main(String[] args) {
+		
+		 
+		System.out.println("Welcome to the dice throw challenge!”");
+		System.out.println("Do you feel lucky? Punk... Do ya?");
+		System.out.println("Press and key and Enter to throw your dice or Press(Q or q) to chicken your butt off");
+		
+		
+	    Dice mydie= new Dice();
+	    Dice compdie= new Dice();
+		Scanner s= new Scanner(System.in);
+		
+		double mysum=0;
+		double compsum=0;
+		int gamecount=0;
+		
+		
+		while (!(s.hasNext("Q")||s.hasNext("q"))) {
+			
+			
+			double myfirstroll=mydie.rollfirstdie();
+			double mysecondroll=mydie.rollseconddie();
+			double compfirstroll=compdie.rollfirstdie();
+			double compsecondroll=compdie.rollseconddie();
+			
+			mysum=myfirstroll+ mysecondroll;
+			compsum=compfirstroll+compsecondroll;
+			
+			//you have rolled a ?
+			System.out.println("Rolling the Dice!!");
+			System.out.println("you have rolled a "+ myfirstroll+" and "+ mysecondroll);
+			System.out.println("I have rolled a "+ compfirstroll+" and "+ compsecondroll);
+			
+			//if Computer wins
+			if(compsum>mysum) {
+				System.out.println("I win!!!");
+				System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+		   //If you win
+			if(compsum<mysum) {
+				System.out.println("You win!!!");
+				System.out.println("Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+			
+			if(compsum==mysum) {
+				//computer looses on a tie because of a double
+				if(myfirstroll==mysecondroll) {
+					
+					System.out.println("Dam! You win on a Double! What Luck!");
+					System.out.println("“Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				//computer wins on a tie because of a double
+				else if(compfirstroll==compsecondroll) {
+					
+					System.out.println("Damn! I win on a Double! Ah! I pity you");
+					System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				
+				
+				else{
+					System.out.println("Stalemate! You’re tough, let’s try for a tie-breaker Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					}
+			}
+	      
+		
+			s.nextLine();	
+			
+            
+			//if input is any other key than "Y" or "y", and player at least played one game
+			if((s.hasNext("Q")||s.hasNext("q"))&&(gamecount>=1)) {
+				System.out.println("Thanks for being a Sport! laters!");
+				break;
+			}
+			
+			
+			
+		}	
+		if((s.hasNext("Q")||s.hasNext("q"))&&(gamecount<1)) {
+		System.out.println("See ya later alligator!");
+		}
+		gamecount++;
+	}
+			
+
+}

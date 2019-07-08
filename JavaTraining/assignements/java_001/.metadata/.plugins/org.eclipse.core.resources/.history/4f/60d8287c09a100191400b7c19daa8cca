@@ -1,0 +1,60 @@
+package App;
+
+import arrayutils.ArrUtil;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+String myList[]= {"Bozo","Foobar","Delta","Foozball","Demo","Money","zoo"};
+		
+	
+	
+	    ArrUtil.arrayHasExactMatch(myList,"zo", false);
+	    ArrUtil.arrayHasExactMatch(myList,"zoo", false);
+	    ArrUtil.arrayHasExactMatch(myList,"zoo", true);
+	    ArrUtil.arrayHasExactMatch(myList,"foo", true);
+	    ArrUtil.arrayHasExactMatch(myList,"foo", false);
+	    ArrUtil.arrayHasExactMatch(myList,"delta", true);
+	    ArrUtil.arrayHasExactMatch(myList,"Delta", true);
+		
+		
+
+		
+        ArrUtil.indexOfOccuranceInArray(myList,"zo", false);
+        ArrUtil.indexOfOccuranceInArray(myList,"zoo", false);
+        ArrUtil.indexOfOccuranceInArray(myList,"zoo", true);
+        ArrUtil.indexOfOccuranceInArray(myList,"foo", true);
+        ArrUtil.indexOfOccuranceInArray(myList,"foo", false);
+        ArrUtil.indexOfOccuranceInArray(myList,"delta", true);
+        ArrUtil.indexOfOccuranceInArray(myList,"Delta", true);
+		
+	
+			
+		System.out.println("This is a test of the arrayHasExactMatch and indexOfOccurenceInArray methods");
+		System.out.println("The array to test contains the following items");
+		System.out.println("{“Bozo”, “FooBar”, “Delta”, “Foozball”, “Demo”, “Money”, “Zoo”}");
+		
+		System.out.println("\nScenario 1\n"+"indexOfOccuranceInArray(myList,\"zo\", false): is "+ ArrUtil.arrayHasExactMatch(myList,"zo", false));
+//		System.out.println("\nScenario 2\n"+"indexOfOccuranceInArray(myList,\"zoo\", false): is "+Scenario2);
+//		System.out.println("\nScenario 3\n"+"indexOfOccuranceInArray(myList,\"zoo\", true): is "+Scenario3);
+//		System.out.println("\nScenario 4\n"+"indexOfOccuranceInArray(myList,\"foo\", true): is "+Scenario4);
+//		System.out.println("\nScenario 5\n"+"indexOfOccuranceInArray(myList,\"foo\", false): is "+Scenario5);
+//		System.out.println("\nScenario 6\n"+"indexOfOccuranceInArray(myList,\"delta\", true): is "+Scenario6);
+//		System.out.println("\nScenario 7\n"+"indexOfOccuranceInArray(myList,\"Delta\", true): is "+Scenario7);
+//		
+//		System.out.println("\nScenario 8\n"+"arrayHasExactMatch(myList,\"zo\", false): is "+Scenario8);
+//		System.out.println("\nScenario 9\n"+"arrayHasExactMatch(myList,\"zoo\", false): is "+Scenario9);
+//		System.out.println("\nScenario 10\n"+"arrayHasExactMatch(myList,\"zoo\", true): is "+Scenario10);
+//		System.out.println("\nScenario 11\n"+"arrayHasExactMatch(myList,\"foo\", true): is "+Scenario11);
+//		System.out.println("\nScenario 12\n"+"arrayHasExactMatch(myList,\"foo\", false): is "+Scenario12);
+//		System.out.println("\nScenario 13\n"+"arrayHasExactMatch(myList,\"delta\", true): is "+Scenario13);
+//		System.out.println("\nScenario 14\n"+"arrayHasExactMatch(myList,\"Delta\", true): is "+Scenario14);
+//			
+//		
+		
+
+	}
+
+}

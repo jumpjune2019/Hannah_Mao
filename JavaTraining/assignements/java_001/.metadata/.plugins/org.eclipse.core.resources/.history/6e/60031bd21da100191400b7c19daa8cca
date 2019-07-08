@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	   // creating 21 dices by creating an array of objects
+		ArrayList<PairDice> tally= new ArrayList<PairDice> ();
+		PairDice pair= new PairDice();
+		
+		PairDice die1= new PairDice();
+		PairDice die2= new PairDice();
+		
+		for (int i=0;i<10;i++) {
+			
+			pair.setDie1(die1.rollfirstdie());
+	        pair.setDie2(die2.rollseconddie());
+	        tally.add(pair);
+		
+			
+			System.out.println(die1.rollfirstdie());
+			System.out.println(die1.rollfirstdie());
+			
+			
+			System.out.println("\n");
+			
+		
+			
+			
+			
+		
+		}
+		
+		
+		int[][] arr = { { 1, 2 }, { 3, 4 } }; 
+		  
+        for (int i = 0; i < 2; i++) 
+            for (int j = 0; j < 2; j++) 
+                System.out.println("arr[" + i + "][" + j + "] = "
+                                   + arr[i][j]); 
+		
+
+	}
+
+}

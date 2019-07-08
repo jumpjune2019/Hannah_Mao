@@ -1,0 +1,48 @@
+import java.util.Arrays;
+
+public class Match {
+
+
+	boolean foundcase;
+	boolean result=false;
+	String SearchArray[];
+	String key;
+	String Keyci;
+	
+	boolean arrayHasExactMatch(String SearchArray[],String key, boolean foundcase ) {
+	
+		//case sensitive
+		if(foundcase==true) {
+			
+			if(Arrays.asList(SearchArray).contains(key)) {
+		
+				result=true;
+		
+			}
+		}
+		
+		
+		//case insensitive
+		else if(foundcase==false) {
+			
+			for(int i=0; i< SearchArray.length; i++ ) {
+				
+				//SearchArray[i].toUpperCase();
+			    //key=key.toUpperCase();
+			    
+			    if((SearchArray[i].toUpperCase()).equals(key.toUpperCase())) {
+			    	result=true;
+			    	
+			    }
+			    
+			     result=false;
+			
+			}		
+			
+		}
+		
+		return result;
+		
+	}
+
+}

@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+
+	public static void main(String[] args) {
+		
+		 
+		System.out.println("Welcome to the dice throw challenge!”");
+		System.out.println("Do you feel lucky? Punk... Do ya?");
+		System.out.println("Press and key and Enter to throw your dice or Press(Q or q) to chicken your butt off");
+		
+		
+	    Dice mydie= new Dice();
+	    Dice compdie= new Dice();
+		Scanner s= new Scanner(System.in);
+		
+		int mysum=0;
+		int compsum=0;
+		int gamecount=0;
+		
+		
+		while (!s.hasNext("Q")) {
+			
+			
+			//you have rolled a ?
+			System.out.println("Rolling the Dice!!");
+			System.out.println("you have rolled a "+ mydie.rollfirstdie()+" and "+ mydie.rollseconddie());
+			System.out.println("I have rolled a "+ compdie.rollfirstdie()+" and "+ compdie.rollseconddie());
+			System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+			
+			
+	        //if input are "Y" or "y"
+			if((s.hasNext("Y"))||(s.hasNext("y"))) {
+				
+				System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+						
+			}
+		
+			s.nextLine();	
+			
+            //if input is any other key than "Y" or "y"
+			if(!(s.hasNext("Y")||s.hasNext("y"))) {
+				break;  //quit the game
+		     
+			}
+			//if input is any other key than "Y" or "y", and player at least played one game
+			if(!(s.hasNext("Y")||s.hasNext("y"))&&(gamecount>=1)) {
+				System.out.println("Thanks for being a Sport! laters!");
+				break;
+			}
+			gamecount++;
+		}		
+		System.out.println("See ya later alligator!");
+	}
+			
+
+}

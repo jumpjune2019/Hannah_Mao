@@ -1,0 +1,155 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	   // creating 21 dices by creating an array of objects
+		ArrayList<PairDice> tally= new ArrayList<PairDice> ();
+		PairDice pair= new PairDice();
+		
+		PairDice die1= new PairDice();
+		PairDice die2= new PairDice();
+		
+		
+		int time;
+		int occurance[]= new int [21];
+	for (int i=0;i<10;i++) {
+		
+		if(((pair.rollfirstdie()==2)&&(pair.rollseconddie()==1))||(pair.rollfirstdie()==1)&&(pair.rollseconddie()==2)) {
+			occurance[1]++;
+		}
+		
+		if(((pair.rollfirstdie()==3)&&(pair.rollseconddie()==1))||(pair.rollfirstdie()==1)&&(pair.rollseconddie()==3)) {
+			occurance[2]++;
+		}
+		
+		if(((pair.rollfirstdie()==3)&&(pair.rollseconddie()==2))||(pair.rollfirstdie()==2)&&(pair.rollseconddie()==3)) {
+			occurance[3]++;
+		}
+		
+		
+		if(((pair.rollfirstdie()==4)&&(pair.rollseconddie()==1))||(pair.rollfirstdie()==1)&&(pair.rollseconddie()==4)) {
+			occurance[4]++;
+		}
+		
+		if(((pair.rollfirstdie()==4)&&(pair.rollseconddie()==2))||(pair.rollfirstdie()==2)&&(pair.rollseconddie()==4)) {
+			occurance[5]++;
+		}
+		
+		if(((pair.rollfirstdie()==4)&&(pair.rollseconddie()==3))||(pair.rollfirstdie()==3)&&(pair.rollseconddie()==4)) {
+			occurance[6]++;
+		}
+		
+		if(((pair.rollfirstdie()==5)&&(pair.rollseconddie()==1))||(pair.rollfirstdie()==1)&&(pair.rollseconddie()==5)) {
+			occurance[7]++;
+		}
+		
+		if(((pair.rollfirstdie()==5)&&(pair.rollseconddie()==2))||(pair.rollfirstdie()==2)&&(pair.rollseconddie()==5)) {
+			occurance[8]++;
+		}
+		
+		
+		if(((pair.rollfirstdie()==5)&&(pair.rollseconddie()==3))||(pair.rollfirstdie()==3)&&(pair.rollseconddie()==5)) {
+			occurance[9]++;
+		}
+		
+		if(((pair.rollfirstdie()==5)&&(pair.rollseconddie()==4))||(pair.rollfirstdie()==4)&&(pair.rollseconddie()==5)) {
+			occurance[10]++;
+		}
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==1))||(pair.rollfirstdie()==1)&&(pair.rollseconddie()==6)) {
+			occurance[11]++;
+		}
+		
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==2))||(pair.rollfirstdie()==2)&&(pair.rollseconddie()==6)) {
+			occurance[12]++;
+		}
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==3))||(pair.rollfirstdie()==3)&&(pair.rollseconddie()==6)) {
+			occurance[12]++;
+		}
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==4))||(pair.rollfirstdie()==4)&&(pair.rollseconddie()==6)) {
+			occurance[13]++;
+		}
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==5))||(pair.rollfirstdie()==5)&&(pair.rollseconddie()==6)) {
+			occurance[14]++;
+		}
+		
+		if(((pair.rollfirstdie()==1)&&(pair.rollseconddie()==1))) {
+			occurance[15]++;
+		}
+		
+		if(((pair.rollfirstdie()==2)&&(pair.rollseconddie()==2))) {
+			occurance[16]++;
+		}
+		
+		
+		if(((pair.rollfirstdie()==3)&&(pair.rollseconddie()==3))) {
+			occurance[17]++;
+		}
+		
+		if(((pair.rollfirstdie()==4)&&(pair.rollseconddie()==4))) {
+			occurance[18]++;
+		}
+		
+		if(((pair.rollfirstdie()==5)&&(pair.rollseconddie()==5))) {
+			occurance[19]++;
+		}
+		
+		if(((pair.rollfirstdie()==6)&&(pair.rollseconddie()==6))) {
+			occurance[20]++;
+		}
+		
+	}
+	
+	
+	System.out.println("Dice 2 and 1"+ occurance[1]);
+	System.out.println("Dice 3 and 1"+ occurance[1]);
+	System.out.println("Dice 3 and 2"+ occurance[1]);
+	System.out.println("Dice 4 and 1"+ occurance[1]);
+	System.out.println("Dice 4 and 2"+ occurance[1]);
+	System.out.println("Dice 4 and 3"+ occurance[1]);
+	System.out.println("Dice 5 and 1"+ occurance[1]);
+	System.out.println("Dice 5 and 2"+ occurance[1]);
+	System.out.println("Dice 5 and 3"+ occurance[1]);
+	System.out.println("Dice 5 and 4"+ occurance[1]);
+	System.out.println("Dice 6 and 1"+ occurance[1]);
+	System.out.println("Dice 6 and 2"+ occurance[1]);
+	System.out.println("Dice 6 and 3"+ occurance[1]);
+	System.out.println("Dice 6 and 4"+ occurance[1]);
+	System.out.println("Dice 6 and 5"+ occurance[1]);
+	System.out.println("Dice 1 and 1"+ occurance[1]);
+	System.out.println("Dice 2 and 2"+ occurance[1]);
+	System.out.println("Dice 3 and 3"+ occurance[1]);
+	System.out.println("Dice 4 and 4"+ occurance[1]);
+	System.out.println("Dice 5 and 5"+ occurance[1]);
+	System.out.println("Dice 6 and 6"+ occurance[1]);
+		
+		
+//		for (int i=0;i<10;i++) {
+//			
+//			//pair.setDie1(die1.rollfirstdie());
+//	       // pair.setDie2(die2.rollseconddie());
+//	        tally.add(pair);
+//		
+//			
+//			System.out.println(pair.rollfirstdie());
+//			System.out.println(pair.rollseconddie());
+//			
+//			
+//			System.out.println("\n");
+//			
+//		
+//			
+//			
+//			
+//		
+//		}
+		
+	}
+
+}

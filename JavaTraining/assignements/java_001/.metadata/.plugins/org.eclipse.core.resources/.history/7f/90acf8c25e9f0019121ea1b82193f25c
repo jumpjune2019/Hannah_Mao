@@ -1,0 +1,28 @@
+package java1;
+
+public class Coinflip {
+	
+     double randum;
+
+	 Coinflip() {
+		// TODO Auto-generated constructor stub
+		 
+		
+		 //randnum=Math.floor(Math.random()*(2-1+1)+1);
+		
+
+	}
+	 
+	double Coinflip_set(double randnum) {
+		
+		randnum=Math.floor(Math.random()*(2-1+1)+1);
+		
+		
+	     return randnum;
+		
+	}
+	
+	
+	
+
+}

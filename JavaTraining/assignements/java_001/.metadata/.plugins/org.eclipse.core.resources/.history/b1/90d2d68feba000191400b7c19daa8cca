@@ -1,0 +1,28 @@
+
+
+public class arrayHasExactMatch {
+	
+	boolean found;
+	String array[];
+	String key;
+	
+
+//	public arrayHasExactMatch() {
+//		// TODO Auto-generated constructor stub
+//		
+//		
+//	}
+	
+	boolean Search(String array[],String key, boolean found ) {
+		
+		
+		
+	
+		return found;
+		
+	}
+	
+	
+	
+
+}

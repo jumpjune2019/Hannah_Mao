@@ -1,0 +1,77 @@
+package java3;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Press any key to throw a die and press Enter(or Q and Enter to quit)");
+		
+		
+		SimpleDie mydie= new SimpleDie();
+		Scanner s= new Scanner(System.in);
+		
+		
+	try {
+
+		
+			
+	while (s.hasNext()) {
+		
+		
+					
+			if(s.hasNext("Q")) {
+			break;
+			}
+			
+			
+			
+			mydie.rolldie();
+			System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+			
+			System.in.read();
+			
+			if(s.hasNext("Y")||s.hasNext("y")) {
+				System.out.println("HELLO");
+			
+					
+				}
+			
+			if(!(s.hasNext("Y")||s.hasNext("y"))) {
+				//System.out.println("HELLO");
+				break;
+					
+				}
+			
+
+			//System.in.read();
+			if(s.hasNext("Y")||s.hasNext("y")) {
+			System.out.println("HELLO");
+				
+			}
+ }
+			
+		
+			
+			//System.in.read();	
+	
+	
+			
+	
+	//System.out.println("Play again (Y or y) and Enter, any other key and Enter to Quit");
+	//Scanner s1= new Scanner(System.in);
+	
+	//System.in.read();
+		
+}
+		
+		
+	catch(Exception e){
+	
+	}  
+	
+	
+  }
+
+}

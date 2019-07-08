@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class Match {
+
+
+	boolean foundcase;
+	boolean result=false;
+	String SearchArray[];
+	String key;
+	
+	boolean arrayHasExactMatch(String SearchArray[],String key, boolean foundcase ) {
+	
+		
+		if(Arrays.asList(SearchArray).contains(key)) {
+		
+		result=true;
+		
+		}
+		
+		if(foundcase==false) {
+			
+			
+			
+		}
+		
+		return result;
+		
+	}
+
+}

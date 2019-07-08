@@ -1,0 +1,9 @@
+package Java4;
+
+public class PairOfDice {
+
+	public PairOfDice() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

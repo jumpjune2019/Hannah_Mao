@@ -1,0 +1,19 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String myList[]= {"Bozo","Foobar","Delta","Foozball","Demo","Money","zoo"};
+		//String search="Bozo";
+		
+		Match mySearch = new Match();
+		
+		boolean result1= mySearch.arrayHasExactMatch(myList,"bozo", true) ;
+		
+		System.out.println(result1);
+		
+		
+
+	}
+
+}
