@@ -5,9 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+class MyException extends Exception{
+	public MyException(String s){
+	
+	 super(s);
+  }
+}
+
+
 public class Main {
 
-	public static void main(String[] args) throws FileNotFoundException, MyException {
+	public static void main(String[] args) throws FileNotFoundException, MyException{
 		// TODO Auto-generated method stub
 		
 		File file = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/matrixchoice/file1.txt");
@@ -81,20 +89,14 @@ public class Main {
 		}
 		printWriter.close ();  
 
-	}
-	
-}	
-	
-	
-	
-static public class MyException extends Exception{
-		public MyException(Scanner s){
-		
-		 s= new Scanner(System.in);
-		
-		if(!(s.hasNext("1")||s.hasNext("2")||s.hasNext("3"))) {
-			System.out.println("Please press 1, 2, and 3 only.");
-		}
 	  }
+	
+	if(!(s.hasNext("1")||s.hasNext("2")||s.hasNext("3"))) {
+		
+		throw new MyException("please press 1,2 or 3");
+		
 	}
+		
+  }	
+	
 }

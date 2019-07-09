@@ -1,7 +1,5 @@
 Your Matrix is : 
 Name                Phone               City                
-Hannah              321-1424            Houston             
-John                324-1849            Houston             
-Jordan              204-1429            Dallas              
-Amanda              353-6462            Austin              
-Summer              792-3525            LA                  
+d\g\                s                   d                   
+s                   s                   g                   
+s                   s                   d                   
