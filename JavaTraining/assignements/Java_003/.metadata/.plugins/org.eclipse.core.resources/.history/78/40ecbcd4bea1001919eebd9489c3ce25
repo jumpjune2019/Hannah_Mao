@@ -1,0 +1,53 @@
+package matrixchoice;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		String[][] matrix = {
+				{" ","Die1","Die2","Die3","Die4","Die5","Die6"},
+				{"Die1","Snake eyes","Australian yo","Little Joe From Kokomo","No field five","Easy six","Six one you're done"},
+				{"Die2","Ace caught a deuce","Ballerina","The fever","Jimmie Hicks","Benny Blue","Easy eight"},
+				{"Die3","Easy four","OJ","Brooklyn Forest","ig Red","Eighter from Decatur","Nina from Pasadena"},
+				{"Die4","Little Pheobe","Easy six","Skinny Mckinney","Square pair","Railroad nine","Big one on the end"},
+				{"Die5","Sixie from Dixie","Skinny Dugan","Easy eight","Jesse James","Puppy paws","Yo"},
+				{"Die6","Devil","Easy eight","Lou Brown","Tennessee","Six five no jive","Midnight"},					
+		};
+		
+		
+		System.out.println("What do you want?");
+		System.out.println("1) Print on screen only (press 1)");
+		System.out.println("2) Print on file (press2)");
+		System.out.println("3) Print on both (press3)");
+		
+		Scanner s= new Scanner(System.in);
+		
+//		while (!(s.hasNext("Q")||s.hasNext("q"))) {
+//			if(s.hasNext("1")) {
+//		
+//				for (int i = 0; i < matrix.length; i++) {
+//					for (int j = 0; j < matrix[i].length; j++) {
+//					System.out.printf("%-24s", matrix[i][j]);
+//		        
+//				    }
+//					System.out.println();
+//			     }
+//				break;
+//			}	
+//		
+//			
+//			
+//			
+//			
+//		}
+		
+		
+		
+		
+			
+	}
+
+}

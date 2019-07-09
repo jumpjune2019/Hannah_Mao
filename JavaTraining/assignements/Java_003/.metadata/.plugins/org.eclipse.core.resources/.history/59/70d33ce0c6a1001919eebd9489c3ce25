@@ -1,0 +1,14 @@
+package compare;
+
+import java.io.File;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file1 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file1.txt");
+		File file2 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file1.txt");
+		
+	}
+
+}

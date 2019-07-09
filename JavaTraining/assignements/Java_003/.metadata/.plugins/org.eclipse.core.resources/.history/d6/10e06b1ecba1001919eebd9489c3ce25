@@ -1,0 +1,48 @@
+package compare;
+
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		File file1 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file1.txt");
+		File file2 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file2.txt");
+		
+		BufferedReader br1 = new BufferedReader(new FileReader(file1)); 
+		BufferedReader br2 = new BufferedReader(new FileReader(file2)); 
+		  
+		  String st1; 
+		  
+		  String st2; 
+		  try {
+			  
+			while ((st1 = br1.readLine()) != null) 
+			    System.out.println(st1);
+			
+			
+		  } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		  	}
+		  
+		  try {
+			  
+				while ((st2 = br2.readLine()) != null) 
+				    System.out.println(st2);
+				
+				
+			  } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			  	}	 
+		  
+	
+	
+	
+	
+	}     
+			
+}
+
+

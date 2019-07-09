@@ -1,0 +1,28 @@
+package phone;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String[][]phoneBook= new String[6][3];
+		phoneBook[0][0]="Name";
+		phoneBook[0][1]="Phone";
+		phoneBook[0][2]="City";
+		
+		for (int i = 0; i < phoneBook.length; i++) {
+			for (int j = 0; j < phoneBook[i].length; j++) {
+				//phoneBook[i][j]="J";
+				
+				
+			System.out.printf("%-20s", phoneBook[i][j]);
+        
+		    }
+			System.out.println();
+	     }
+		
+		
+		
+
+	}
+
+}

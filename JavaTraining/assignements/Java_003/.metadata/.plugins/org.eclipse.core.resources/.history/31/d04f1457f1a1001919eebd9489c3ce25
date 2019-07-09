@@ -1,0 +1,25 @@
+package phone;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String[][]phoneBook= new String[3][5];
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				matrix[i][j]=0;
+				
+				
+			System.out.printf("%-24s", matrix[i][j]);
+        
+		    }
+			System.out.println();
+	     }
+		
+		
+		
+
+	}
+
+}

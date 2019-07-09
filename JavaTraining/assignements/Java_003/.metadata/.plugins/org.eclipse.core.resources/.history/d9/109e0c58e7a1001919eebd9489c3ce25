@@ -1,0 +1,68 @@
+package compare;
+
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		File file1 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file1.txt");
+		File file2 = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/compare/file2.txt");
+		
+		BufferedReader br1 = new BufferedReader(new FileReader(file1)); //br= bugger reader
+		BufferedReader br2 = new BufferedReader(new FileReader(file2)); 
+		  
+		  String str1="hello"; 
+		  String str2;
+		  
+		 // String content1 = null;
+		  //String content2=null;
+		  try {
+			  
+			while ((str1 = br1.readLine()) != null) 
+			    System.out.println(str1);
+			   
+			
+		  } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		  	}
+		  
+		   System.out.println(str1);
+		  
+		  try {
+			  
+				while ((str2 = br2.readLine()) != null) 
+				    System.out.println(str2);
+				     //content2 = br2.readLine();
+				     
+				
+				
+			  } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			  	}	
+		  
+//		  if(content1==content2) {
+//			  
+//			  System.out.println("identical content");
+//			   
+//		  }
+//		  
+//		  if(content1!=content2) {
+//			  System.out.println("different content");
+//		  
+//		  }
+//		  
+//		  
+//		  
+		  
+	
+	
+	
+	
+	}     
+			
+}
+
+
