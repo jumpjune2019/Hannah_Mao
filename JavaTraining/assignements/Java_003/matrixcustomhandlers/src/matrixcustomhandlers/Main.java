@@ -7,7 +7,12 @@ import java.util.Scanner;
 
 class MyException extends Exception{
 	public MyException(String s){
-	
+	 super(s);
+  }
+}
+
+class MyExceptionOutOfBound extends Exception{
+	public MyExceptionOutOfBound(String s){
 	 super(s);
   }
 }
@@ -15,7 +20,9 @@ class MyException extends Exception{
 
 public class Main {
 
-	public static void main(String[] args) throws FileNotFoundException, MyException{
+	private static Object thow;
+
+	public static void main(String[] args) throws FileNotFoundException, MyException,  MyExceptionOutOfBound{
 		// TODO Auto-generated method stub
 		
 		File file = new File ("/Users/hannahmao/Desktop/JavaTraining/assignements/Java_003/matrixchoice/file1.txt");
@@ -45,12 +52,31 @@ public class Main {
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				System.out.printf("%-24s", matrix[i][j]);
-   
+				
 			}
 			System.out.println();
-    }
+			
+         }
+			
+	
+     }
+	
 
-}	
+	int row = 7;
+	int column=7;
+	//String[][] matrix1 = new String [6][6];
+	
+	
+	
+	  if(row>matrix.length||column>matrix.length) {
+		     throw new MyExceptionOutOfBound("Reference Item Out of Bound");
+	  }
+	
+	//testing Out of bound exception
+			System.out.printf("\n");
+			System.out.printf("%-24s", matrix[row][column]);
+	
+	
 
 	//press 2 to print on file
 	if(s.hasNext("2")) {

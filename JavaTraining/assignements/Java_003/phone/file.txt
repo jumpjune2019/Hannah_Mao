@@ -1,5 +1,7 @@
 Your Matrix is : 
 Name                Phone               City                
-d\g\                s                   d                   
-s                   s                   g                   
-s                   s                   d                   
+Hannah              123                 Houston             
+Issac               243                 Dallas              
+David               475                 Houston             
+Angela              567                 Dallas              
+Jordan              464                 Houston             

@@ -29,90 +29,67 @@ public class Main {
 		//String input = " "; 
 		
 		 // Enter Matrix Data
-        enterMatrixData( s, phoneBook, 4, 3);
+        enterMatrixData( s, phoneBook, 6, 3);
         
         // Print Matrix Data
-        printMatrix(phoneBook,4, 3);
+        printMatrix(phoneBook,6, 3);
         
         //Print Matrix File
-        printMatrixFile(printWriter, phoneBook,4, 3);
+        printMatrixFile(printWriter, phoneBook, 6, 3);
         s.close();
 	}
 	
-	
 	 public static void enterMatrixData(Scanner s, String[][] matrix, int matrixRow, int matrixCol) throws MyException{
-	     System.out.println("Enter Matrix Data in the order of Name, Phone, City,");
+	     System.out.println("Enter Matrix Data in the order of Name, Phone, City (please enter 5 rows of data");
 	       
 	       String input = null;
+	       String rowEntered []= new String [3];
+	       String row =" ";
+	       String userinput =" ";
+	      
+	       
 	          for (int i = 0; i < matrixRow-1; i++)
+	        	  
 	          {
+	        	  
 	              for (int j = 0; j < matrixCol; j++)
 	              {
+	            	 
 	            	  input = s.nextLine();
-	                  matrix[i+1][j] = input;
+	            	
+	                   matrix[i+1][j] = input;
 	                  
+	                   rowEntered[j]=input;   //for displaying the row entered
+	            	
 	                  if(input.equals("")) { 
 	 	            	 throw new MyException(" You have entered an empty entry,please retry");
-	 	              } 
-	            
-	               
+	 	              }    
+	                
 	              }
 	              
-	              System.out.println("Do you accept the row?(press 1 to accept, press 2 to type new row");
-	             // press 1 to accept
-	             
-//	              if(s.nextLine()=="1") {
-//	              s.nextLine(); 
-//	              }
-	              
-////	              if(s.nextLine()=="2") {
-////	            	  s.nextLine(); 
-////	            	  s.nextLine(); 
-////	            	  //s.nextLine(); 
-////	            	  
-////	              }
-//	              
-	              
-	          }   	              
-	      
+	              System.out.println ("You have entered:");
+	              		for (int k = 0; k <3; k++) {
+	              			System.out.print(rowEntered[k]+ " ");	
+	              		}
+	              			
+	              		System.out.print("\n");
+	              		
+	              	    System.out.println("Do you accept the row?(press y to accept, press n to type new row");  
+	              	    
+	              	    userinput=s.nextLine();
+	              	    
+	              	    //press y for yes
+	              	    if(userinput.equals("y")) {
+	              	    	
+		              	//press n for no        
+	              	    }else if(userinput.equals("n")) {
+	              	    
+		              	    --i;  
+		              	
+	              	    }
+	          }    
 	     }
 	          
-	  
-	  
-//	  private static String validateInput(Scanner s) {
-//		 
-//		boolean flip = true;
-//		
-//		while(flip) {
-//			//System.out.println("Enter Matrix Data in the order of Name, Phone, City,");
-//			try {
-//				String input = s.nextLine();
-//				 if(input.equals("")) { 
-//	            	 throw new MyException(" You have entered an empty entry,please retry");
-//	              } 
-//				 if(input.equals("1")) {
-//					 System.out.println("Awesome");
-//					 
-//				 }
-//				 
-//                 if(input.equals("2")) {
-//					 
-//				           }
-//				 
-//				 
-//				 else {
-//	            	  //System.out.println("Input: ");
-//	            	  flip = false;
-//	            	  return input;
-//	              }
-//			} catch (MyException e) {
-//				e.printStackTrace();
-//				
-//			}
-//		}
-//		return null;
-//	}
-
 
 	public static void printMatrix(String[][] matrix, int matrixRow, int matrixCol){
 	    System.out.println("Your Matrix is : ");
@@ -132,8 +109,7 @@ public class Main {
 	            System.out.println();
 	        }
 	  }
-	  
-	  
+	    
 	  public static void printMatrixFile(PrintWriter writefile, String[][] matrix, int matrixRow, int matrixCol){
 		    writefile.println("Your Matrix is : ");
 		    writefile.printf("%-20s", matrix[0][0]);
