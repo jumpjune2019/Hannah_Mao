@@ -4,7 +4,7 @@ var stackCID = [];
 let arrayDrop = [];
 
 function undo(){
-    //debugger;
+    
 	var getFromStackID = stackID.pop();
 	var getFromStackData = stackData.pop();
 	var getFromStackCID= stackCID.pop();
@@ -24,7 +24,6 @@ function undo(){
 	
 }
 
-
 function init(){
 var button = document.getElementById("Undo");
 	button.addEventListener("click", pop, false);
@@ -40,30 +39,27 @@ function drag(ev) {
 }
 
 var dataElement;
-//var defElement;
 
 function drop(ev) {
 
   ev.preventDefault();
   var dropbox = ev.target.innerHTML;
-  
-  //ev.target.appendChild(document.getElementById(data));
 
 	if ( dropbox == "drop"){
-
+	
  	var dataID = ev.dataTransfer.getData("text");
  	dataElement= document.getElementById(dataID);
-
- 	stackID.push(ev.dataTransfer.getData("text")); //push the ID and element onto stack
+       
+ 	stackID.push(dataID); //push the ID and element onto stack
  	stackData.push(dataElement.innerHTML);
  	stackCID.push(ev.target.id);                   
   
-    var dataID= document.getElementById(dataID);
-
-    //drop terms to dragboxes
+    //drop terms to dropboxes
 	ev.target.innerHTML= dataElement.innerHTML;
-	ev.target.setAttribute("IDLink", dataElement.getAttribute("IDLink"))
-  	
+
+	//set the links of dropboxes to that of drag boxes
+	ev.target.setAttribute("droppedIDLink", dataElement.getAttribute("LinkID"));
+	
   	//assigning the term box to be empty
   	dataElement.innerHTML= " ";
   	dataElement.setAttribute("draggable",false);
@@ -87,64 +83,55 @@ function startTime(seconds){
  			var count = 0;
  			var counter ;
 
-			function startTimer(){
+function startTimer(){
                 counter = setInterval(timer, 1000);
-            }
+}
 
                 
-            function timer() {
+function timer() {
                     count++;
                     document.getElementById('timer').innerHTML = startTime(count);
-            }
+}
             
 
+function startbutton() {
 
-			function startbutton() {
-					var val = event.target.getAttribute("nextstate");
-					event.target.value = val;
-					switch(val) {					
-						case "End":
-							val = "Play";
-							startTimer();
-						break;
+		var val = event.target.getAttribute("nextstate");
+		event.target.value = val;
+		switch(val) {					
+			case "End":
+				val = "Play";
+				startTimer();
+				break;
 						
-						case "Play":
-							val = "End";
-							clearInterval(counter);
+				case "Play":
+				val = "End";
+				clearInterval(counter);
 
-							drag1.setAttribute("draggable",false);
- 			 				drag2.setAttribute("draggable",false);
- 			 				drag3.setAttribute("draggable",false);
- 							drag4.setAttribute("draggable",false);
- 			 				drag5.setAttribute("draggable",false);
-
-
-
-						break;
-					}
-					event.target.setAttribute("nextstate", val);
-
-
+				drag1.setAttribute("draggable",false);
+ 			 	drag2.setAttribute("draggable",false);
+ 			 	drag3.setAttribute("draggable",false);
+ 				drag4.setAttribute("draggable",false);
+ 			 	drag5.setAttribute("draggable",false);
+				break;
+		}
+				event.target.setAttribute("nextstate", val);
 
 	    //assigning shuffled columns 
 
 		for (var j= 0; j<5; j++){
-			//debugger;
-			document.getElementById("drag"+(j+1)).innerHTML=arrayTerm[j].value; 
-			//document.getElementById("drag"+(j+1)).setAttribute("IDLink", arrayTerm[j].id); 
+			
+			document.getElementById("drag"+(j+1)).innerHTML=arrayTerm[j].value;
+
+			document.getElementById("drag"+(j+1)).setAttribute("LinkID", arrayTerm[j].id); 
 
 			document.getElementById("defb"+(j+1)).innerHTML=arrayDef[j].value;
-			//debugger;
-		
 			
 		}
-	}
+}
 
-			
-				//var btn = document.getElementById("myState");
-				//btn.addEventListener("click", cb, false);
 
-    fetch('poc.json')
+    fetch('quizApp.json')
   	.then(function(response) {
      	return response.json();
 
@@ -160,19 +147,17 @@ function startTime(seconds){
 
     });
  
-
    function shuffle(array){
    array.sort(()=>Math.random()-0.5);
    }
  	
-	
    let arrayTerm = [];
    let arrayDef = [];
   
   //Appending the Json Data to HTML
   //randomize 
 
-	function appendJson(data){
+function appendJson(data){
 
          //shuffle the entire json file 
          shuffle (data);
@@ -180,75 +165,68 @@ function startTime(seconds){
 
         //debugger;
 		for (var i= 0; i<data.length; i++){
-		
-            //document.getElementById("drag"+(i+1)).innerHTML=data[i].term; //assign json to HTML Terms
-           	
+			
            	arrayTerm.push({
 
                 id: data[i].id,
            		value: data[i].term
 
            	}); //push json data to array holding the terms
-            
-            arrayTerm.sort(function(a, b){return 0.5 - Math.random()}); //randomize Term Columns
-            var dragItem=document.getElementById("drag"+(i+1))
-            dragItem.setAttribute("IDLink", arrayTerm[i].id);
-
-  
+             arrayTerm.sort(function(a, b){return 0.5 - Math.random()}); //randomize Term Columns
+       
 
 			arrayDef.push({
 			   id: data[i].id, 
 			   value: data[i].definition
 			}); //push json data to array holding the definition
-          	
           	arrayDef.sort(function(a, b){return 0.5 - Math.random()}); //randomize Def Columns
 
-                
+
             if(i>3){
 		    break;    
-		    } 
+		    }  
+
 		} 
-	}	
+}	
 	
 
-	function showScore(){
+function showScore(){
 
-		var count;
+		var count=0;
 	
-     
 		for (var k= 0; k<5; k++) {
+          
+			 arrayDrop.push({
 
-			arrayDrop.push({
-
-                id:    document.getElementById("drop"+(k+1)).getAttribute("IDLink"),
-				value: document.getElementById("drop"+(k+1)).innerHTML //get the innerHTML of dropboxes
-		    });
+                 id:    document.getElementById("drop"+(k+1)).getAttribute("droppedIDLink"), //get the id of dropboxes
+			 	value:  document.getElementById("drop"+(k+1)).innerHTML //get the innerHTML of dropboxes
+		     });
 			
+
 			if(arrayDrop[k].id == arrayDef[k].id){
 
-	 			//highlight dropbox green
-	 			
+	 			//highlight dropbox green	
 	 			document.getElementById("drop"+(k+1)).setAttribute("style","background-color:green");
-
-	 			count++;
-
 	 			
+	 			count++;
 	 			
 	 		}
 
 	 		else{
 	 			//highlight dropbox red
-	 			
 	 		   document.getElementById("drop"+(k+1)).setAttribute("style","background-color:red");
 	 			
-			
 	 		}
-
-	 		//console.log(count);
 
 		}
 
-	}	
+       
+        
+        var score=count;
+        document.getElementById("myText").innerHTML = score;
+
+	 	
+}	
 
  	
 
