@@ -1,0 +1,8 @@
+
+public class SingleThread ext {
+
+	public SingleThread() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

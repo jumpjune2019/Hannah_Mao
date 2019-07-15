@@ -1,0 +1,37 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+	
+	
+
+	public static void main(String[] args)throws java.io.IOException {
+		
+	  
+//	     
+//	      
+//	     
+//	      
+//	      System.out.println("Traffic Light Simulator is a Go!");
+//	    	  
+//	   
+		char ch = 'i';
+		  boolean flag = false;
+		 Scanner br = new Scanner(System.in);
+		  String input =  br.nextLine();
+			br.close();
+				
+				System.out.println("Traffic Light Simulator is a Go!");
+				MultiThreads T1 = new MultiThreads(Light.RED);
+		    	T1.start();
+			
+				
+				
+			
+		
+	
+	 
+	}        
+	  
+}
+

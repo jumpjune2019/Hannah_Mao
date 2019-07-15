@@ -1,0 +1,9 @@
+package arraySwap;
+
+public class genSwap {
+
+	public genSwap() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

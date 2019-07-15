@@ -1,0 +1,58 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static boolean dealWithInput(String ch) {
+    	if((ch.equals(""))) {
+    		//System.out.println("character is: " + ch);
+    		return true;
+    	}else {
+    			return false;
+    		}
+    	
+		
+	}
+
+	public static void main(String[] args)throws java.io.IOException {
+		
+	  
+//	     
+//	      
+//	     
+//	      
+//	      System.out.println("Traffic Light Simulator is a Go!");
+//	    	  
+//	   
+		System.out.println("Traffic Light Simulator is a Go!");
+		boolean flag= false;  
+		Scanner br = new Scanner(System.in);
+		String input =  br.nextLine();
+		//MultiThreads T1 = new MultiThreads(Light.RED);
+	    //T1.start();
+			
+		
+				
+		while(flag==false) {
+					
+				
+				
+				
+				
+				
+				  
+				  br.close();
+					flag = dealWithInput(input);
+				
+				
+				}
+				
+				
+			
+		
+	
+	 
+	}        
+	  
+}
+

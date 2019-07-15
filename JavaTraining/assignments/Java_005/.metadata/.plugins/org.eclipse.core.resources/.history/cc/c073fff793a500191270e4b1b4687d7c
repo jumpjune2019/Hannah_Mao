@@ -1,0 +1,24 @@
+package arraySwap;
+
+public class genSwap {
+
+	 public static <T> void swap(T[] a, int i, int j) {
+	        T temp = a[i];
+	        a[i] = a[j];
+	        a[j] = temp;
+	    }
+	 
+	 
+	 
+	 public static void main(String[] args) {
+		 
+		 //System.out.println("hello");
+		 
+		 
+		
+		 
+	
+	 }
+	 
+
+}

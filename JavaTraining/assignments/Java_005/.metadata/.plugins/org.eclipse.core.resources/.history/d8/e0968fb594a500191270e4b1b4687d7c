@@ -1,0 +1,39 @@
+package arraySwap;
+
+public class genSwap {
+
+	 public static <T> void swap(T[] a, int i, int j) {
+	        T temp = a[i];
+	        a[i] = a[j];
+	        a[j] = temp;
+	    }
+	 
+	 
+	 
+	 public static void main(String[] args) {
+
+	
+		 Integer[] Array = new Integer[]{ 1,2,3,4,5 }; 
+		 
+		 swap(Array, 2, 3);
+		
+		 for (int i = 0; i < Array.length; i++) {
+			 
+			 System.out.println( Array[i]);	 
+	
+	     }
+		 
+		 
+		 String[] StrArray = new String[]{ "I","to","like","code"}; 
+		 
+		 swap(StrArray, 1, 2);
+		 
+            for (int i = 0; i < StrArray.length; i++) {
+			 
+			 System.out.println( StrArray[i]);	 
+	
+	       }
+		 
+   }
+
+}
