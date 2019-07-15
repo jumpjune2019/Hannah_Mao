@@ -13,9 +13,11 @@ Pros:
 - Reduce Code Size
 - No need to define a Return statement for one line functions
 - Lexically bind the context
+<br>
 <br />
-Cons:
-<br />
+
+Cons: 
+
 - The Objects cannot be constructors
 - They don’t bind an arguments object.
 
@@ -26,7 +28,7 @@ Cons:
    		 setDoubleSize(35); 
    		 document.write(size);     
       
-</script> 	
+ </script> 	
 
 - var materials = [ 'Hydrogen',  'Helium',  'Lithium', 'Beryllium'];
 
