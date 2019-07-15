@@ -1,11 +1,13 @@
 
-##Overview:
+#Overview:
 
-	This documentation provides an overview of how the ARROW operator is used in JavaScript for functional programming and the pros and cons of using it. 
+	This documentation provides an overview of how the ARROW operator is used in JavaScript for functional 
+	programming and the pros and cons of using it. 
 
-##Arrow Operator:
+#Arrow Operator:
 Arrow operators are syntaxes for writing function expressions. 
-It uses the  => token.   It reduces the function code size without its own bindings like the **this, argument, super or new.target ** keywords.
+It uses the  => token.   It reduces the function code size without its own bindings like the 
+*this, argument, super or new.target * keywords.
 
 Pros:
 •	Reduce Code Size
@@ -15,7 +17,7 @@ Cons:
 •	The Objects cannot be constructors
 •	They don’t bind an arguments object.
 
-##Test Samples:
+#Test Samples:
 
 •	<script> 
   		  setDoubleSize = (sz)=>size=2*sz; 
@@ -28,9 +30,10 @@ Cons:
 
 console.log(materials.map(material => material.length));
 
-##Conclusion:
+#Conclusion:
 
-		The Arrow operator work well with callback functions, but doesn’t work with object methods and constructors. 
+		The Arrow operator work well with callback functions, but doesn’t work with object
+		methods and constructors. 
 
 Hannah Mao
 Joseph Chacko
