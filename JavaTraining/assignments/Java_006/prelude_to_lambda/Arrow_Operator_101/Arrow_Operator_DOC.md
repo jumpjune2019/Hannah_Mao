@@ -10,23 +10,23 @@ It uses the  => token.   It reduces the function code size without its own bindi
 _this, argument, super or new.target_ keywords.
 
 Pros:
-..*	Reduce Code Size
-..*	No need to define a Return statement for one line functions
-..*	Lexically bind the context
+- Reduce Code Size
+- No need to define a Return statement for one line functions
+- Lexically bind the context
 Cons:
-..*	The Objects cannot be constructors
-..*	They don’t bind an arguments object.
+- The Objects cannot be constructors
+- They don’t bind an arguments object.
 
 # Test Samples:
 
-•	<script> 
+- <script> 
   		  setDoubleSize = (sz)=>size=2*sz; 
    		 setDoubleSize(35); 
    		 document.write(size);     
       
 </script> 	
 
-..*	var materials = [ 'Hydrogen',  'Helium',  'Lithium', 'Beryllium'];
+- var materials = [ 'Hydrogen',  'Helium',  'Lithium', 'Beryllium'];
 
 console.log(materials.map(material => material.length));
 
