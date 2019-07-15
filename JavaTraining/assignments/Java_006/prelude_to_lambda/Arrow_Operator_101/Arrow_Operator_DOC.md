@@ -12,9 +12,10 @@ It uses the  => token.   It reduces the function code size without its own bindi
 Pros:
 - Reduce Code Size
 - No need to define a Return statement for one line functions
-- Lexically bind the context\
+- Lexically bind the context
 <br />
 Cons:
+<br />
 - The Objects cannot be constructors
 - They don’t bind an arguments object.
 
@@ -36,6 +37,8 @@ console.log(materials.map(material => material.length));
 		The Arrow operator work well with callback functions, but doesn’t work with object
 		methods and constructors. 
 
-Hannah Mao
+Hannah Mao 
+<br />
 Joseph Chacko
+<br />
 07-15-2019
