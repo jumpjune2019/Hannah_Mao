@@ -7,12 +7,13 @@
 # Arrow Operator:
 Arrow operators are syntaxes for writing function expressions. 
 It uses the  => token.   It reduces the function code size without its own bindings like the 
-_this, argument, super or new.target_ keywords.
+**this, argument, super or new.target** keywords.
 
 Pros:
 - Reduce Code Size
 - No need to define a Return statement for one line functions
-- Lexically bind the context
+- Lexically bind the context\
+<br />
 Cons:
 - The Objects cannot be constructors
 - They don’t bind an arguments object.
