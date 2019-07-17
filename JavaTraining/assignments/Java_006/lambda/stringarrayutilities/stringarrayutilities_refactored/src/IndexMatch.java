@@ -1,4 +1,4 @@
-package stringarrayutilities_refactored;
+
 
 interface IndexMatch {
 	

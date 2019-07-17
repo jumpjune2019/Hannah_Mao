@@ -1,5 +1,3 @@
-package gameofdice_refactored;
-
 import java.util.Scanner;
 
 

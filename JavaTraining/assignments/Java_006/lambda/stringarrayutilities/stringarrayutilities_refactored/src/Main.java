@@ -1,4 +1,3 @@
-package stringarrayutilities_refactored;
 
 
 public class Main {

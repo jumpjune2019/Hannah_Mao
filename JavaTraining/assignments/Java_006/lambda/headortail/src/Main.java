@@ -1,4 +1,4 @@
-package headortail;
+
 
 import java.util.Scanner;
 
