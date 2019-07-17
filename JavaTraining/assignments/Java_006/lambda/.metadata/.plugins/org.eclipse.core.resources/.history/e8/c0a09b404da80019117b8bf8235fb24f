@@ -1,8 +1,0 @@
-package gameofdice_refactored;
-
-interface MyRandom {
-	
-	int Rand(int max, int min );
-	
-}
-

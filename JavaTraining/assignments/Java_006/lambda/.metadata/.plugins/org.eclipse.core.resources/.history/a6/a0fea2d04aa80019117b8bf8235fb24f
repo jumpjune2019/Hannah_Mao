@@ -1,7 +1,0 @@
-package gameofdice_refactored;
-
-interface MyFlip {
-	
-	void flip(int f);
-
-}

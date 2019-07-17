@@ -1,6 +1,0 @@
-interface RollDice {
-	
-	int roll();
-
-}
-

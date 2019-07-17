@@ -1,7 +1,0 @@
-package gameofdice_refactored;
-
-interface MyRoll {
-	
-	void roll(int f);
-
-}

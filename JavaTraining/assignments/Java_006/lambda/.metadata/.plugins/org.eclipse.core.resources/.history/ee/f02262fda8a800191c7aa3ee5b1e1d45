@@ -1,0 +1,7 @@
+package headortail;
+
+public class MyFlip {
+	
+	void flip(int f);
+
+}

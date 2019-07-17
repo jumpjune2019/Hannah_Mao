@@ -1,9 +1,0 @@
-package basicsorting;
-
-public class ASC {
-
-	public ASC() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

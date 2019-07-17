@@ -1,9 +1,0 @@
-package basicsorting;
-
-
-interface MyTransform <T> {
-		// TODO Auto-generated constructor stub
-		void transform (T[] a, boolean c);
-}
-
-

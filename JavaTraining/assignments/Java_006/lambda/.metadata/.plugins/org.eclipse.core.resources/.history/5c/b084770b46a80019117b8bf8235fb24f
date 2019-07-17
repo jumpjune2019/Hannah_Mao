@@ -1,7 +1,0 @@
-package headortail;
-
-interface MyFlip {
-	
-	String flip(int f);
-
-}

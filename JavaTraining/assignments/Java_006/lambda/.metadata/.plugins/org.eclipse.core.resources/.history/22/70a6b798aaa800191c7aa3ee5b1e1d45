@@ -1,0 +1,106 @@
+package gameofdice_refactored;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String[][] matrix = {
+				{" ","Die1","Die2","Die3","Die4","Die5","Die6	"},
+				{"Die1","Snake eyes","Australian yo","Little Joe From Kokomo","No field five","Easy six","        Six one you're done"},
+				{"Die2","Ace caught a deuce","Ballerina","The fever","Jimmie Hicks","Benny Blue","Easy eight"},
+				{"Die3","Easy four","OJ","Brooklyn Forest","Big Red","Eighter from Decatur","Nina from Pasadena"},
+				{"Die4","Little Pheobe","Easy six","Skinny Mckinney","Square pair","Railroad nine","Big one on the end"},
+				{"Die5","Sixie from Dixie","Skinny Dugan","Easy eight","Jesse James","Puppy paws","Yo"},
+				{"Die6","Devil","Easy eight","Lou Brown","Tennessee","Six five no jive","Midnight"},					
+		};
+		
+		 
+		System.out.println("Welcome to the dice throw challenge!”");
+		System.out.println("Do you feel lucky? Punk... Do ya?");
+		System.out.println("Press any key and Enter to throw your dice or Press(Q or q) to chicken your butt off");
+		
+		
+	   
+		Scanner s= new Scanner(System.in);
+		
+		int mysum=0;
+		int compsum=0;
+		int gamecount=0;
+		
+		
+		while (!(s.hasNext("Q")||s.hasNext("q"))) {
+			
+				
+	     RollDice firstroll = ()-> (int) Math.floor(Math.random()*(6-1+1)+1);
+	     RollDice secondroll = ()-> (int) Math.floor(Math.random()*(6-1+1)+1);
+			 
+	
+			gamecount++;
+			int myfirstroll=firstroll.roll();
+			int mysecondroll=secondroll.roll();
+			int compfirstroll=firstroll.roll();
+			int compsecondroll=secondroll.roll();
+			
+			mysum=myfirstroll+ mysecondroll;
+			compsum=compfirstroll+compsecondroll;
+			
+			//you have rolled a ?
+			System.out.println("Rolling the Dice!!");
+			System.out.println("you have rolled a "+ myfirstroll+" and "+ mysecondroll+" > "+matrix[myfirstroll][mysecondroll]);
+			System.out.println("I have rolled a "+ compfirstroll+" and "+ compsecondroll+" > "+matrix[compfirstroll][compsecondroll]);
+			
+			//if Computer wins
+			if(compsum>mysum) {
+				System.out.println("I win!!!");
+				System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+		   //If you win
+			if(compsum<mysum) {
+				System.out.println("You win!!!");
+				System.out.println("Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+			
+			if(compsum==mysum) {
+				//computer looses on a tie because of a int
+				if(myfirstroll==mysecondroll) {
+					
+					System.out.println("Dam! You win on a Double! What Luck!");
+					System.out.println("“Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				//computer wins on a tie because of a int
+				else if(compfirstroll==compsecondroll) {
+					
+					System.out.println("Damn! I win on a Double! Ah! I pity you");
+					System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				
+				//an acutal tie
+				else{
+					System.out.println("Stalemate! You’re tough, let’s try for a tie-breaker Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					}
+			}
+	     
+			s.nextLine();	
+			
+			//if input is "Q" or "q" to quit, and player at least played one game
+			if((s.hasNext("Q")||s.hasNext("q"))&&(gamecount>=1)) {
+				System.out.println("Thanks for being a Sport! laters!");
+				break;
+			}
+				
+		}
+		
+	    //if input is "Q" or "q" to quit, and player at least played less thatn one game
+		if((s.hasNext("Q")||s.hasNext("q"))&&(gamecount<1)) {
+				System.out.println("See ya later alligator!");
+		
+		}
+		
+	}
+
+}

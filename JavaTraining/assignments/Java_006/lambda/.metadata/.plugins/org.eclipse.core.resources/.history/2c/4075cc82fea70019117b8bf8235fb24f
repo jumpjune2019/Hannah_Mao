@@ -1,9 +1,0 @@
-package basicsorting;
-
-public class MyTransform {
-
-	public MyTransform() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

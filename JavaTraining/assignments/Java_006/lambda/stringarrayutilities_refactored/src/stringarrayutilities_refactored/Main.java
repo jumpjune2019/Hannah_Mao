@@ -1,0 +1,116 @@
+package stringarrayutilities_refactored;
+
+//compare with Assignment08_StringArrayUtilities in Java 001
+public class Main {
+
+	public static void main(String[] args) {
+	
+   String myList[]= {"Bozo","Foobar","Delta","Foozball","Demo","Money","zoo"};
+		
+      
+   Match mysearch = (SearchArray,key,foundcase, result)-> {
+        	
+        	//result= false;
+        	if(foundcase==true) {
+    			
+   			for(int i=0; i< SearchArray.length; i++ ) {
+			    
+			    if((SearchArray[i]).equals(key)) {
+			    	result=true;
+			    	break;
+			    	
+			    }	        
+			}				
+		}
+			
+		//case insensitive
+		else if(foundcase==false) {
+			
+			for(int i=0; i< SearchArray.length; i++ ) {
+			    
+			    if((SearchArray[i].toUpperCase()).equals(key.toUpperCase())) {
+			    	result=true;
+			    	break;
+			    	
+			    }	        	
+			}			
+		}
+        	return result;
+   };
+   
+   
+	IndexMatch myindexsearch= (SearchArray, key, foundcase, result)-> {
+		
+		//result=-1;
+		if(foundcase==true) {
+			for(int i=0; i< SearchArray.length; i++ ) {
+			  
+			    if((SearchArray[i]).equals(key)) {
+			    	result=i;	
+			    	break;
+		    
+			    }
+			}
+		}
+		
+		
+		//case insensitive
+		else if(foundcase==false) {
+			
+			for(int j=0; j< SearchArray.length; j++ ) {
+				
+			    
+			    if((SearchArray[j].toUpperCase()).equals(key.toUpperCase())) {
+			    	result=j;	
+			    	break;
+			    }
+			}		
+		}
+		
+		return result;
+		
+	};
+	
+		
+		boolean Scenario1= mysearch.arrayHasExactMatch(myList,"zo", false, false);
+		boolean Scenario2= mysearch.arrayHasExactMatch(myList,"zoo", false, false);
+		boolean Scenario3= mysearch.arrayHasExactMatch(myList,"zoo", true, false);
+		boolean Scenario4= mysearch.arrayHasExactMatch(myList,"foo", true, false);
+		boolean Scenario5= mysearch.arrayHasExactMatch(myList,"foo", false, false);
+		boolean Scenario6= mysearch.arrayHasExactMatch(myList,"delta", true, false);
+		boolean Scenario7= mysearch.arrayHasExactMatch(myList,"Delta", true, false);
+		
+			
+		int Scenario8= myindexsearch.indexOfOccuranceInArray(myList,"zo", false,-1);
+		int Scenario9= myindexsearch.indexOfOccuranceInArray(myList,"zoo", false,-1);
+		int Scenario10= myindexsearch.indexOfOccuranceInArray(myList,"zoo", true,-1);
+		int Scenario11= myindexsearch.indexOfOccuranceInArray(myList,"foo", true,-1);
+		int Scenario12= myindexsearch.indexOfOccuranceInArray(myList,"foo", false,-1);
+		int Scenario13= myindexsearch.indexOfOccuranceInArray(myList,"delta", true,-1);
+		int Scenario14= myindexsearch.indexOfOccuranceInArray(myList,"Delta", true,-1);
+	
+			
+		System.out.println("This is a test of the arrayHasExactMatch and indexOfOccurenceInArray methods");
+		System.out.println("The array to test contains the following items");
+		System.out.println("{“Bozo”, “FooBar”, “Delta”, “Foozball”, “Demo”, “Money”, “Zoo”}");
+		
+		System.out.println("\nScenario 1\n"+"arrayHasExactMatch(myList,\"zo\", false): is "+Scenario1);
+		System.out.println("\nScenario 2\n"+"arrayHasExactMatch(myList,\"zoo\", false): is "+Scenario2);
+		System.out.println("\nScenario 3\n"+"arrayHasExactMatch(myList,\"zoo\", true): is "+Scenario3);
+		System.out.println("\nScenario 4\n"+"arrayHasExactMatch(myList,\"foo\", true): is "+Scenario4);
+		System.out.println("\nScenario 5\n"+"arrayHasExactMatch(myList,\"foo\", false): is "+Scenario5);
+		System.out.println("\nScenario 6\n"+"arrayHasExactMatch(myList,\"delta\", true): is "+Scenario6);
+		System.out.println("\nScenario 7\n"+"arrayHasExactMatch(myList,\"Delta\", true): is "+Scenario7);
+		
+		System.out.println("\nScenario 8\n"+"indexOfOccuranceInArray(myList,\"zo\", false): is "+Scenario8);
+		System.out.println("\nScenario 9\n"+"indexOfOccuranceInArray(myList,\"zoo\", false): is "+Scenario9);
+		System.out.println("\nScenario 10\n"+"indexOfOccuranceInArray(myList,\"zoo\", true): is "+Scenario10);
+		System.out.println("\nScenario 11\n"+"indexOfOccuranceInArray(myList,\"foo\", true): is "+Scenario11);
+		System.out.println("\nScenario 12\n"+"indexOfOccuranceInArray(myList,\"foo\", false): is "+Scenario12);
+		System.out.println("\nScenario 13\n"+"indexOfOccuranceInArray(myList,\"delta\", true): is "+Scenario13);
+		System.out.println("\nScenario 14\n"+"indexOfOccuranceInArray(myList,\"Delta\", true): is "+Scenario14);
+						
+			
+	}
+
+}
