@@ -1,0 +1,115 @@
+package basicsorting;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Integer[] numArr = {10,2,4,15,7,9,1,21};
+		String[] strArr = {"claude", "Phil", "lois","clark","Arthur", "Mera","bruce"};
+        
+		System.out.printf("Initial String Array: %s", Arrays.toString(numArr)+'\n');
+		
+		//sorting array of integers
+		MyTransform<Integer> ascArray = (v)->{ 
+			
+			Integer[] array= v;
+			
+			 Arrays.sort(array);
+			
+			return array;
+		};
+		
+		Integer[] array = ascArray.transform(numArr);
+		
+		System.out.printf("Sorted ASC: %s", Arrays.toString(array)+'\n');	
+		
+        
+		
+		MyTransform<Integer> descArray = (v)->{
+        			
+        		Arrays.sort(v, Collections.reverseOrder()); 
+    			
+    		};
+    		
+    	descArray.transform(numArr);
+    		
+    	System.out.printf("Sorted DESC OFF: %s", Arrays.toString(numArr)+ "\n");
+    	
+    	
+    	
+    	System.out.printf("\n");
+    	
+    	
+    	System.out.printf("Initial String Array: %s", Arrays.toString(strArr)+'\n');
+    		
+    	//sorting array of strings in ascending order, case sensitive
+    	MyTransform<String> ascStrArray = (v)->{
+			
+    		      Arrays.sort(v);
+			
+		};	
+		
+		ascStrArray.transform(strArr);
+		
+		System.out.printf("Sorted ASC and CASE SENSITIVITY ON: %s", Arrays.toString(strArr)+'\n');	
+		
+		
+		//sorting array of strings in ascending order, case insensitive
+    	MyTransform<String> ascStrArrayCaseIn = (v)->{
+    		
+    		for (int i = 0; i < v.length; i++) {
+    			 v[i] = v[i].toLowerCase();
+    			}
+			
+    		      Arrays.sort(v);
+    		      
+    		      
+    		      return array;
+			
+		};	
+		
+		ascStrArrayCaseIn.transform(strArr);
+		
+		System.out.printf("Sorted ASC and CASE SENSITIVITY : %s", Arrays.toString(strArr)+'\n');	
+		
+		
+		
+		//sorting array of strings in descending order, case sensitive
+		MyTransform<String> descStrArray = (v)->{
+			
+    		Arrays.sort(v, Collections.reverseOrder()); 
+			
+		};	
+		
+		descStrArray.transform(strArr);
+		
+		System.out.printf("Sorted DESC and CASE SENSITIVITY ON: %s", Arrays.toString(strArr)+'\n');	
+		
+		
+		//sorting array of strings in descending order, case insensitive
+    	MyTransform<String> descStrArrayCaseIn = (v)->{
+    		
+    		for (int i = 0; i < v.length; i++) {
+    			 v[i] = v[i].toLowerCase();
+    			}
+			
+
+    		Arrays.sort(v, Collections.reverseOrder()); 
+			
+			
+		};	
+		
+		descStrArrayCaseIn.transform(strArr);
+		
+		System.out.printf("Sorted DESC and CASE SENSITIVITY OFF: %s", Arrays.toString(strArr)+'\n');	
+			
+		
+	}
+
+}

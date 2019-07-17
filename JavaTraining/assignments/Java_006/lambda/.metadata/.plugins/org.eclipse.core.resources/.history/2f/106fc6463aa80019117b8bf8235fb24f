@@ -1,0 +1,30 @@
+package headortail;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to the game of Head or Tail where you will flip your life away!");
+		
+		System.out.println("Press the F key and flip your luck!");
+		
+		Scanner s= new Scanner(System.in);
+		
+		while (!(s.hasNext("Q")||s.hasNext("q"))) {
+			
+			
+			
+			
+			if(s.hasNext("Q")||s.hasNext("q")) {
+				System.out.println("Thanks for being a Sport! laters!");
+				break;
+			}
+			
+			
+		}
+
+	}
+
+}

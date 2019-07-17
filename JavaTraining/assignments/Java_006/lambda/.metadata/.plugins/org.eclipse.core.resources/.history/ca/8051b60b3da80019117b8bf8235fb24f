@@ -1,0 +1,8 @@
+package headortail;
+
+interface MyRandom {
+	
+	int Rand(int n, int m );
+	
+
+}

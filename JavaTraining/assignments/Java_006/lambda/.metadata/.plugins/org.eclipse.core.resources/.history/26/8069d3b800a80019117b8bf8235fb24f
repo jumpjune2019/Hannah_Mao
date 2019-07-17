@@ -1,0 +1,34 @@
+package basicsorting;
+
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] numArr = {10,2,4,15,7,9,1,21};
+		String[] strArr = {"claude", "Phil", "lois","clark","Arthur", "Mera","bruce"};
+
+		
+		MyTransform<Integer> asc = (v)->{ 
+			
+			Arrays.sort(v);
+			
+			System.out.printf("Modified numArr: %s", Arrays.toString(numArr));
+			
+			
+		};
+		
+		
+		
+        MyTransform<Integer> desc = (v)->{
+        	
+			
+		};
+		
+		
+		
+	}
+
+}
