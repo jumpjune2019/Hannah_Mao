@@ -1,0 +1,43 @@
+package headortail;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.event.*;
+
+public class ButtonDemo  implements ActionListener {
+	JLabel jlab;
+	String first; //first button label
+	String second; //second button label
+	String Msg;    //message
+	
+	
+	public void setButtons(JPanel frm, String f, String s, String fMsg, String sMsg) {
+		first = f;
+		second = s;
+		Msg = fMsg;
+	
+		
+		JButton FlipButton = new JButton(first);
+		JButton resetButton = new JButton(second);
+		// Add action listeners.
+		FlipButton.addActionListener(this);
+		resetButton.addActionListener(this);
+		// Add the buttons to the content pane.
+		frm.add(FlipButton);
+		frm.add(resetButton);
+		// Create a label.
+		jlab = new JLabel("Press a button.");
+		// Add the label to the frame.
+		frm.add(jlab);
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getActionCommand().equals(first)) {
+			jlab.setText(Msg);
+		} 
+	}
+}
+

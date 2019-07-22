@@ -1,0 +1,79 @@
+package gridlayoutchallenge;
+
+
+import java.awt.*;
+import javax.swing.*;
+
+
+import java.util.Scanner;
+
+public class Main {
+	
+	
+	public static void centerAndSizeJFrameOnScreen(JFrame frm, int width, int height) {
+		// set the size of the frame to half in width and height
+		frm.setSize(width/2, height/2);
+		// here's the part where the JFrame gets actually centered
+		frm.setLocationRelativeTo(null);
+		
+	
+	}
+
+	public static JFrame setFrameStuff(JFrame frm, int onExit, int width, int height) {
+		
+		// this will center and size the JFrame on screen
+		// it will have a height and width of half the screen
+		
+		centerAndSizeJFrameOnScreen(frm, width, height);
+		frm.setDefaultCloseOperation(onExit);
+		
+	
+		JPanel panelcenter = new JPanel();
+		//ButtonDemo bd = new ButtonDemo();
+		//bd.setButtons(panel1,"A-1");
+		
+		BorderLayout layout= new BorderLayout();
+		GridLayout glayout= new GridLayout();
+		
+		JPanel paneltop= new JPanel();
+		JPanel panelbottom= new JPanel();
+		
+		
+	    paneltop.setLayout(layout);
+	    panelbottom.setLayout(layout);
+	   panelcenter.setLayout(layout);
+	    
+	   
+
+		paneltop.add(new JLabel("Basic Matrix Demo"), layout.NORTH);
+		panelcenter.add(new JLabel("A-1"), glayout.CENTER);
+		panelcenter.add(new JButton("A-1"), glayout.CENTER);
+		panelbottom.add(new JLabel("No Seat Selected"), layout.SOUTH);
+		
+		frm.add(panelcenter);
+		frm.add(paneltop);
+		frm.add(panelbottom);
+		
+		return frm;
+	}
+	
+
+	public static void main(String[] args) {
+
+	
+	SwingUtilities.invokeLater(new Runnable() {
+		SwingDemo demo;
+		JFrame frm;
+		
+		public void run() {
+			demo = new SwingDemo("Head or Tail");
+			frm = demo.getFrame();
+			frm = setFrameStuff(frm, JFrame.EXIT_ON_CLOSE, 600, 400);
+			frm.setVisible(true);
+		}
+	});
+	
+
+	}
+
+}

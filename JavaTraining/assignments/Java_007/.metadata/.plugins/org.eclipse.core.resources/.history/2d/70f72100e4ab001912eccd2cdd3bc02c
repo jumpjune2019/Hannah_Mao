@@ -1,0 +1,27 @@
+package gridlayoutchallenge;
+
+import java.awt.BorderLayout;
+
+enum LabelsEnum {
+	
+	//CENTER("Center", BorderLayout.CENTER), 
+	NORTH("Basic Matrix Demo", BorderLayout.NORTH), 
+	SOUTH("No Seat Selected", BorderLayout.SOUTH); 
+
+	private String label;
+	private String position;
+	
+	// Constructor
+	LabelsEnum(String l, String p) { 
+		label = l;
+		position = p;
+	}
+
+	String getLabel() {
+		return label;
+	}
+	
+	String getPosition() {
+		return position;
+	}
+}

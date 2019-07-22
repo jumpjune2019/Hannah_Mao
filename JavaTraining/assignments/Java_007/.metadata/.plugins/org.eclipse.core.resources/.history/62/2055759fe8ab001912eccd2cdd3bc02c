@@ -1,0 +1,38 @@
+package gridlayoutchallenge;
+
+
+import java.awt.*;
+import javax.swing.*;
+public class Main {
+    JFrame frame;
+    JPanel pane;
+    JTextField fields[];
+    Main () {
+        frame = new JFrame("Frame Test");
+        fields = new JTextField[5];
+        Container pane2 = frame.getContentPane();
+        pane2.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
+
+        for(int i = 0; i < fields.length; i++) {
+            pane = new JPanel(new FlowLayout());
+            fields[i] = new JTextField ("This is field " + (i + 1)); //You missed to do this and that's why you were getting a NPE
+            if (i == 3) {
+                fields[i].setColumns(10);
+                fields[i].setText("Apple");
+            } else {
+                fields[i].setColumns(5);
+            }
+            pane.add(new JLabel("Label " + (i +1)));
+            pane.add(fields[i]);
+            frame.add(pane);
+        }
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public static void main (String args[]) {
+        new Main();
+    }
+}

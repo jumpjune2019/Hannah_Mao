@@ -1,0 +1,8 @@
+package gameofdice;
+
+public class RollDice {
+		
+		int roll();
+
+
+}

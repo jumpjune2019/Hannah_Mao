@@ -1,0 +1,89 @@
+package gridlayoutchallenge;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.*;
+
+public class ButtonDemo implements ActionListener {
+	static JLabel jlab;
+	String buttonlabel; //first button label
+	String textlabel;
+	JPanel jpan;
+	static JLabel selected;  //showing selected label
+	
+	ButtonDemo(JPanel panel, String f, String j){
+		this.jpan=panel;
+		this.buttonlabel=f;
+		this.textlabel=j;
+			
+	}
+	
+	public ButtonDemo() {
+		
+	}
+
+	public JPanel getButtonPane(JPanel pane, String f, String j) {
+		buttonlabel=f;
+		textlabel=j;
+		
+	    BoxLayout layout = new BoxLayout(pane,BoxLayout.Y_AXIS);
+	    pane.setLayout(layout);
+	    pane.setBackground(Color.pink);
+	    pane.setSize(50,50);
+
+		JButton Button = new JButton(buttonlabel);
+		
+		 //Create a label.
+		jlab = new JLabel(textlabel);
+	    pane.add(jlab);
+		
+		// Add action listeners.
+		Button.addActionListener(this);
+		pane.add(Button);
+	
+		
+	     
+		//selected = new JLabel("  ");
+	    
+		//pane.add(selected,BorderLayout.PAGE_END);
+	    
+	     
+		return pane;
+			
+	}
+
+	public JLabel getLabel() {
+		
+		return jlab;
+	}
+	
+	
+	public static void setlabel(JLabel selected) {
+		
+		 selected= jlab;
+		 
+	}
+	
+	
+
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+	
+		
+		if(ae.getActionCommand().equals(buttonlabel)) {
+			
+			jlab.setText(textlabel);
+			
+			
+		} 
+	}
+}
+

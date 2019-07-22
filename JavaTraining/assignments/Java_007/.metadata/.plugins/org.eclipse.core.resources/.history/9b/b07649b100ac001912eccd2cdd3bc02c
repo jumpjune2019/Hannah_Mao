@@ -1,0 +1,49 @@
+package gridlayoutchallenge;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.event.*;
+
+public class ButtonDemo  implements ActionListener {
+	JLabel jlab;
+	String first; //first button label
+	
+	
+	public void setButton(String f) {
+		first = f;
+		
+		
+
+		JButton Button = new JButton(first);
+		
+		// Add action listeners.
+		Button.addActionListener(this);
+		
+
+	
+		 //Create a label.
+		jlab = new JLabel("A-1");
+		
+		
+		
+		 
+		
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+//	
+		
+		
+		if(ae.getActionCommand().equals(first)) {
+			
+			//jlab.setText(Msg);
+			
+		} 
+	}
+}
+

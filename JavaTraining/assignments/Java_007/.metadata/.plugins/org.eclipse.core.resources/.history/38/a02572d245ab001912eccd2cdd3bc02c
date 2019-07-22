@@ -1,0 +1,58 @@
+package gameofdice;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.event.*;
+
+public class ButtonDemo  implements ActionListener {
+	JLabel jlab;
+	String first; //first button label
+	String second; //second button label
+	String Msg;    //message
+	String MsgReset;
+	
+	public void setButtons(JPanel frm, String f, String s, String sMsg) {
+		first = f;
+		second = s;
+		Msg = "";
+		MsgReset = sMsg;
+		
+		
+		JButton FlipButton = new JButton(first);
+		JButton resetButton = new JButton(second);
+		// Add action listeners.
+		FlipButton.addActionListener(this);
+		resetButton.addActionListener(this);
+		// Add the buttons to the content pane.
+		frm.add(FlipButton);
+		frm.add(resetButton);
+		// Create a label.
+		jlab = new JLabel("Waiting...");
+		// Add the label to the frame.
+		frm.add(jlab);
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+		
+		
+		
+		 RollDice myroll = ()-> (int) Math.floor(Math.random()*(6-1+1)+1);
+	
+		 int rolldice = myroll.roll();
+		 
+		 Msg = "You have rolled a " + (char)(rolldice+'0');
+		
+		
+		if(ae.getActionCommand().equals(first)) {
+			
+			jlab.setText(Msg);
+			
+		} else {
+			jlab.setText(MsgReset);
+		}
+	}
+}
+

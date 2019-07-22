@@ -1,0 +1,127 @@
+package gameofdice;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.event.*;
+
+public class ButtonDemo  implements ActionListener {
+	JLabel jlabMyRoll;
+	JLabel jlabCompRoll;
+	JLabel jlabresult;
+	String first; //first button label
+	String second; //second button label
+	String Msg1;   //message to display your rolls 
+	String Msg2;   //message to display computer's rolls
+	
+	String MsgReset;
+	String Msgresult; //Display the result
+	
+	public void setButtons(JPanel frm, String f, String s, String sMsg) {
+		first = f;
+		second = s;
+		Msg1 = "";
+		Msg2 = "";
+		MsgReset = sMsg;
+		
+		
+		JButton FlipButton = new JButton(first);
+		JButton resetButton = new JButton(second);
+		// Add action listeners.
+		FlipButton.addActionListener(this);
+		resetButton.addActionListener(this);
+		// Add the buttons to the content pane.
+		frm.add(FlipButton);
+		frm.add(resetButton);
+		// Create a label.
+		jlabMyRoll = new JLabel("Waiting...");
+		jlabCompRoll = new JLabel("Waiting...");
+		jlabresult = new JLabel("Waiting...");
+		// Add the label to the frame.
+		frm.add(jlabMyRoll);
+		frm.add(jlabCompRoll);
+		frm.add(jlabresult);
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+		
+		String[][] matrix = {
+				{" ","Die1","Die2","Die3","Die4","Die5","Die6"},
+				{"Die1","Snake eyes","Australian yo","Little Joe From Kokomo","No field five","Easy six","Six one you're done"},
+				{"Die2","Ace caught a deuce","Ballerina","The fever","Jimmie Hicks","Benny Blue","Easy eight"},
+				{"Die3","Easy four","OJ","Brooklyn Forest","Big Red","Eighter from Decatur","Nina from Pasadena"},
+				{"Die4","Little Pheobe","Easy six","Skinny Mckinney","Square pair","Railroad nine","Big one on the end"},
+				{"Die5","Sixie from Dixie","Skinny Dugan","Easy eight","Jesse James","Puppy paws","Yo"},
+				{"Die6","Devil","Easy eight","Lou Brown","Tennessee","Six five no jive","Midnight"},					
+		};
+		
+		 RollDice firstroll = ()-> (int) Math.floor(Math.random()*(6-1+1)+1);
+		 RollDice secondroll = ()-> (int) Math.floor(Math.random()*(6-1+1)+1);
+	
+		 int myfirstroll=firstroll.roll();
+		 int mysecondroll=secondroll.roll();
+		 int compfirstroll=firstroll.roll();
+		 int compsecondroll=secondroll.roll();
+		 
+	     int mysum=myfirstroll+ mysecondroll;
+	     int compsum=compfirstroll+compsecondroll;
+	     
+	     
+		 
+		 Msg1 = "You have rolled a " + (char)(myfirstroll+'0')+" and " + (char)(mysecondroll+'0')+" > "+ matrix[myfirstroll][mysecondroll]+".\n";
+		 Msg2 = "I have rolled a " + (char)(compfirstroll+'0')+" and " + (char)(compsecondroll+'0')+" > "+matrix[compfirstroll][compsecondroll]+".\n";
+		
+		//if Computer wins
+			if(compsum>mysum) {
+				Msgresult="I win!!!";
+				//System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+		   //If you win
+			if(compsum<mysum) {
+				Msgresult="I win!!!";"You win!!!";
+				//System.out.println("Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+			}
+			
+			if(compsum==mysum) {
+				//computer looses on a tie because of a int
+				if(myfirstroll==mysecondroll) {
+					
+					Msgresult= "Dam! You win on a Double! What Luck!";
+					//System.out.println("“Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				//computer wins on a tie because of a int
+				else if(compfirstroll==compsecondroll) {
+					
+					Msgresult="Damn! I win on a Double! Ah! I pity you";
+					//System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+					
+				}
+				
+				//an acutal tie
+				else{
+					Msgresult="Stalemate! You’re tough, let’s try for a tie-breaker";
+					}
+			}
+	     
+		
+				
+		
+	
+		
+		if(ae.getActionCommand().equals(first)) {
+			
+			jlabMyRoll.setText(Msg1);
+			jlabCompRoll.setText(Msg2);
+			jlabresult.setText(Msgresult);
+			
+			
+		} else {
+			jlabMyRoll.setText(MsgReset);
+			jlabCompRoll.setText(MsgReset);
+		}
+	}
+}
+

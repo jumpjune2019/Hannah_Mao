@@ -1,0 +1,103 @@
+package headortail;
+
+import java.awt.*;
+import javax.swing.*;
+import java.util.Scanner;
+
+public class Main {
+	
+	
+	public static void centerAndSizeJFrameOnScreen(JFrame frm, int width, int height) {
+		// set the size of the frame to half in width and height
+		frm.setSize(width/2, height/2);
+		// here's the part where the JFrame gets actually centered
+		frm.setLocationRelativeTo(null);
+	}
+
+	public static JFrame setFrameStuff(JFrame frm, int onExit, int width, int height) {
+		// this will center and size the JFrame on screen
+		// it will have a height and width of half the screen
+		centerAndSizeJFrameOnScreen(frm, width, height);
+		frm.setDefaultCloseOperation(onExit);
+		
+		JPanel panel1 = new JPanel();
+	
+		panel1.setLayout(new FlowLayout());
+		
+		ButtonDemo bd = new ButtonDemo();
+		bd.setButtons(panel1, "Click to Flip", "Reset", "flip", "Waiting...");
+	
+		
+		frm.add(panel1);
+		
+		return frm;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+//		System.out.println("Welcome to the game of Head or Tail where you will flip your life away!");
+//		
+//		System.out.println("Press the F key and flip your luck!");
+//		
+//		Scanner s= new Scanner(System.in);
+//		
+//		
+//		
+//	while (!(s.hasNext("Q")||s.hasNext("q"))) {
+//		
+//
+//		if(s.hasNext("F")) {
+//			
+//			 MyRandom num= (m,n)-> {return (int)Math.floor(Math.random()*(m-n+n)+n);};
+//			
+//			 int result = num.Rand(2,1);
+//			
+//			 	MyFlip myflip= (f)-> { 
+//			 		   
+//			 		if (result==1) {
+//			 			System.out.print("The coin flip is: Head!"+"\n");
+//		
+//			 		}
+//			
+//			 		if(result==2) {
+//			 			System.out.print("The coin flip is: Tail!"+"\n");  
+//			 		}
+//			 	};
+//		
+//		
+//			 	myflip.flip(result);
+//	
+//				System.out.println("Press the F key to try again, press Q or q to quit");
+//				
+//			}
+//		    
+//		    s.nextLine();
+//				
+//			if(s.hasNext("Q")||s.hasNext("q")) {
+//				System.out.println("Thanks you for playing!");
+//				break;
+//			}	
+//			
+//		}
+	
+	
+	SwingUtilities.invokeLater(new Runnable() {
+		SwingDemo demo;
+		JFrame frm;
+		
+		public void run() {
+			demo = new SwingDemo("Head or Tail");
+			frm = demo.getFrame();
+			frm = setFrameStuff(frm, JFrame.EXIT_ON_CLOSE, 600, 400);
+			frm.setVisible(true);
+		}
+	});
+	
+	
+
+	}
+
+}

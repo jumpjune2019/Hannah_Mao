@@ -1,0 +1,64 @@
+package gridlayoutchallenge;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.*;
+
+public class ButtonDemo implements ActionListener {
+	JLabel jlab;
+	String buttonlabel; //first button label
+	String textlabel;
+	JPanel jpan;
+	
+	ButtonDemo(JPanel panel, String f, String j){
+		this.jpan=panel;
+		this.buttonlabel=f;
+		this.textlabel=j;
+			
+	}
+	
+	public JPanel getButtonPane(JPanel pane, String f, String j) {
+		buttonlabel=f;
+		textlabel=j;
+		
+	    GridLayout layout = new GridLayout(2,0);
+	    pane.setLayout(layout);
+	    pane.setBackground(Color.pink);
+	    pane.setSize(50,50);
+
+		JButton Button = new JButton(buttonlabel);
+		
+		// Add action listeners.
+		Button.addActionListener(this);
+		pane.add(Button);
+	
+		
+		 //Create a label.
+		jlab = new JLabel(textlabel);
+	    pane.add(jlab);
+	    
+		return pane;
+			
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+//	
+		JLabel selected = new JLabel();
+		
+		if(ae.getActionCommand().equals(buttonlabel)) {
+			
+			selected.setText(textlabel);
+			
+		} else {
+			selected.setText("No Seat Selected");
+			
+		}
+	}
+}
+

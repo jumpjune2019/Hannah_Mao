@@ -1,0 +1,44 @@
+package gridlayoutchallenge;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.event.*;
+
+public class ButtonDemo  implements ActionListener {
+	JLabel jlab;
+	String first; //first button label
+	
+	
+	public void setButtons(JPanel frm, String f) {
+		first = f;
+	
+
+		JButton FlipButton = new JButton(first);
+		
+		// Add action listeners.
+		FlipButton.addActionListener(this);
+		
+		// Add the buttons to the content pane.
+		frm.add(FlipButton);
+	
+		// Create a label.
+		jlab = new JLabel("A-1");
+		// Add the label to the frame.
+		frm.add(jlab);
+	}
+	
+	// Handle button events.
+
+	public void actionPerformed(ActionEvent ae) {
+//	
+		
+		
+		if(ae.getActionCommand().equals(first)) {
+			
+			//jlab.setText(Msg);
+			
+		} 
+	}
+}
+
