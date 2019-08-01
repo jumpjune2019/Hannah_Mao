@@ -12,11 +12,14 @@ import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 import java.util.Vector;
 
 import javax.swing.*;
+
 
 public class Main implements ActionListener, ItemListener {
 	   private JFrame mainFrame;
@@ -33,21 +36,20 @@ public class Main implements ActionListener, ItemListener {
 	   
 	   JToggleButton[][] buttons = new JToggleButton[row][col];
 	   JLabel[][] labels = new JLabel[row][col];
-	   JLabel [] rowlabels= new JLabel[row];
-	   JLabel [] collabels= new JLabel[row];
+	   JLabel[] rowlabels= new JLabel[row];
+	   JLabel[] collabels= new JLabel[row];
 	  
-	   String textlabel;
-	   
+	   String textlabel; 
 	   Stack<Client> clientstack= new Stack<Client>();
-	   DefaultListModel<Client> clients= new DefaultListModel<Client>();
-	   
-	   Vector<Seat> seatlist= new Vector<Seat>();
-	
-	   public Main(){
+	   DefaultListModel<Client> clients= new DefaultListModel<Client>(); //list of clients assigned to JList
+	   LinkedList<Seat> seatlist= new LinkedList<Seat>(); //contains the assigned seats 
+	   LinkedList<Client> clientscopy= new LinkedList<Client>(); //client list for comparison purposes
+	 
+	   public Main() {
 	      prepareGUI();
 	   }
 	  
-	   private void prepareGUI(){
+	   private void prepareGUI() {
 	      mainFrame = new JFrame("Grid Layout Example");
 	      mainFrame.setSize(1200,800);
 	      mainFrame.setLayout(new FlowLayout());
@@ -63,30 +65,22 @@ public class Main implements ActionListener, ItemListener {
 	         }        
 	      });  
 	      
- 
+          //import the list of clients from excel
 	      ClientStore myStore = new ClientStore("clients_list.csv");
 		  Client[] store = myStore.getClientStore();	
 		  
-		  for(int i=0; i<store.length;i++) {
+		  for(int i=0; i<store.length;i++) {  
 			 
 			  clients.addElement(new Client(store[i].getClientLastName(),store[i].getClientFirstName(), store[i].getClientId()));
-			  
+			  clientscopy.add(new Client(store[i].getClientLastName(),store[i].getClientFirstName(), store[i].getClientId()));
 		  }
-		
+		 
 		  clientlist = new JList(clients); 
-		  clientlist.setCellRenderer(new DefaultListCellRenderer() {
-	            @Override
-	            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-	                Component renderer = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-	                if (renderer instanceof JLabel && value instanceof Client) {
-	                   
-	                    ((JLabel) renderer).setText(((Client) value).getFullname());
-	                }
-	                return renderer;
-	            }
-	        });
+
 		  
 	      JScrollPane scrollpanel =new JScrollPane(clientlist);
+	      
+	      scrollpanel.setPreferredSize(new Dimension(200,300));;
 	      
 	      resetbutton= new JButton("Reset Entire Matrix");
 	      resetbutton.addActionListener(this);
@@ -96,22 +90,20 @@ public class Main implements ActionListener, ItemListener {
 	     
 	      controlPanel = new JPanel(); 
 	      mainFrame.add(headerLabel,BorderLayout.PAGE_START);
-	      
-	     
 	      controlPanel.add(scrollpanel,BorderLayout.LINE_START);
 	      JLabel alignmenthelper = new JLabel("                                              ");
 	      mainFrame.add(alignmenthelper);
 	      
 	      for (int k = 0; k < 10; k++) {
 		 		 collabels[k]=new JLabel( "            Seat " + (k+1));
-		 		   mainFrame.add(collabels[k],BorderLayout.LINE_START);
+		 		   mainFrame.add(collabels[k]);
 		      }
 	      
 	      mainFrame.add(controlPanel,BorderLayout.CENTER);
 	      mainFrame.add(resetbutton,BorderLayout.PAGE_END);
 	      mainFrame.add(printbutton,BorderLayout.PAGE_END);
-	   
 	      mainFrame.setVisible(true);  
+	      
 	   	}
 	   
 	   private void showGridLayoutDemo() throws NullPointerException {
@@ -140,9 +132,9 @@ public class Main implements ActionListener, ItemListener {
 	    		  buttons[i][j].addActionListener(this);
 	    		  buttons[i][j].addItemListener(this);
 	    		  buttons[i][j].setPreferredSize(new Dimension(80, 30));
-	    		  buttons[i][j].putClientProperty("row", i);
-	    		  buttons[i][j].putClientProperty("col", j);
-	    		  
+	    		  buttons[i][j].putClientProperty("row", i); //set the row index of the seat
+	    		  buttons[i][j].putClientProperty("col", j); //set column index of the seat
+	    		 
 	    		  JPanel panelbutton= new JPanel();
 	    		  
 	    		  BoxLayout layout1 = new BoxLayout(panelbutton,BoxLayout.Y_AXIS);
@@ -151,23 +143,19 @@ public class Main implements ActionListener, ItemListener {
 	    		  
 	       	      panelbutton.add(labels[i][j]);
 	    		  panelbutton.add(buttons[i][j]);
-	    		  panelbutton.setBackground(Color.green);
+	    		  panelbutton.setBackground(Color.PINK);
 	    		  
 	    		  panel.add(panelbutton);
-	    		    
-	    	  } 
-	    	  
+	    		 	    
+	    	  }   
 	        }
 	      
 	      controlPanel.add(panel); 
-	      
-	      
-	      mainFrame.setVisible(true);
-	       
+	      mainFrame.setVisible(true);   
 	   }
 	   
 	   
-	   public void actionPerformed(ActionEvent ae) {
+	   public void actionPerformed(ActionEvent ae)  {
 		     
 		   int idx = clientlist.getSelectedIndex();
 		   Object selection = clientlist.getSelectedValue(); 
@@ -175,60 +163,70 @@ public class Main implements ActionListener, ItemListener {
 		   Object source =  ae.getSource();
 		  
               //for JToggle buttons action event
-		   if (source instanceof JToggleButton) { 
+		  if (source instanceof JToggleButton) { 
 		    	  
 		    	  JToggleButton btn= (JToggleButton) ae.getSource();
-		    	  int clickedindexr=(int) btn.getClientProperty("row");
-		    	  int clickedindexc=(int) btn.getClientProperty("col");
+		    	  int clickedindexr=(int) btn.getClientProperty("row"); //get the clicked row index  
+		    	  int clickedindexc=(int) btn.getClientProperty("col"); //get the clicked col index  
 		    	 
+		     
 			   //Booking an event (Will assign the client and remove the client from JList)
 		    	  if (ae.getActionCommand().equals("unbook")) { 
 		    		  
-		    		  
 		    		  for (int i=0; i<clients.size();i++) {
-		    			             
+		    			          
 		    			  if (idx==i) {  
 		    		           	    		          
 				    		  labels[clickedindexr][clickedindexc].setText(clients.get(i).getInitialIDString()); //assign client to seat
+				    		   
+				    		  clientstack.push(clients.get(i));  
 				    		  
-				    		  //String bookclient= labels[clickedindexr][clickedindexc].getText();
-				    		  
-				    		  clientstack.push(clients.get(i));
-				    		    
-				    		  seatlist.add(new Seat(clients.get(i).getFullname(),clients.get(i).getClientId(), clickedindexr, clickedindexc));
+				    		  seatlist.add(new Seat(clients.get(i).getClientFirstName(),clients.get(i).getClientLastName(),clients.get(i).getClientId(), clickedindexr, clickedindexc));
 				          
 				    		  clients.remove(i); //remove client from Jlist
-				                  
+				    		        
 		                }
 		    		 }           
 			      }
-			  
+		    		 
 			   //Unbooking an event (Return the client to the JList and return seat as "vacant" and "book")
 		    	  else if (ae.getActionCommand().equals("book")) {
 					
 					String selected =labels[clickedindexr][clickedindexc].getText();
 					
-//					for (int i=0; i<clients.size();i++) {
-//						System.out.println(clients.get(i).getInitialIDString());
-//						
-//					}
+						for(int i=0;i<clientscopy.size();i++) {
 						
-						if(!clients.contains(selected)) { //if the client is not in the JList
-							
-							Client obj = clientstack.pop();
-							
-							clients.add(0,obj);  //add the client back to JList
+							String clientele=clientscopy.get(i).getInitialIDString(); 
 						
-							labels[clickedindexr][clickedindexc].setText("vacant");
+						    //return client back to JList set seats back to vacant
+							if(selected.equals(clientele)) { //find the selected initial/id in the list of clients
+						
+								Client obj= clientscopy.get(i);
+								clients.add(0,obj); 
+								labels[clickedindexr][clickedindexc].setText("vacant");
+								
+			
+							}	
+						}
+					    //remove the assigned seat
+						for(int i=0;i<seatlist.size();i++) {
+						
+							String seatele= seatlist.get(i).getInitialIDString();
 					
-					   }	
-		    	 }  	 	  
-		    }   	  
-	    	  
-	    
+								if(selected.equals(seatele)) { //find the selected intial/id in the list of seats	
+									
+									seatlist.remove(i);
+									
+								
+								}			
+						}		
+		    	  	}
+		    	}
+		    
+	    	   
 		   //for JButton action events
 		   if (source instanceof JButton) { 
-			     
+			    // reset the entire matrix to "book" and "vacant" 
 			   if (ae.getActionCommand().equals("Reset Entire Matrix")) { 
 				   
 				   for (int i = 0; i < buttons.length; i++) {
@@ -236,17 +234,18 @@ public class Main implements ActionListener, ItemListener {
 				    			
 				    		  labels[i][j].setText("vacant"); //vacant client
 				    		  buttons[i][j].setText(textlabel); //reset button labels to "book"
+				    		  seatlist.clear(); //erase the print list of seats
 				          }
 				      }
 				   
 				  
-				   while (!clientstack.empty()) {
+				   while (!clientstack.empty()) { //clear all the clients in the stack
 					 
 					   Client obj = clientstack.pop();
 					   clients.add(0,obj);
 				   }    
 			   }
-			      
+			      //print the currently assigned seats in the console
 			   if (ae.getActionCommand().equals("Print List of Assigned Clients in Console")) { 
 				      
 				   	 System.out.println("- display list of clients with seat assignment\n");
@@ -262,7 +261,7 @@ public class Main implements ActionListener, ItemListener {
 					 
 					for (int k=0;k<seatlist.size();k++) {
 						
-						String fullname=seatlist.get(k).getFullname();
+						String fullname= seatlist.get(k).getFullname();
 						String id=seatlist.get(k).getID();
 						String seat=seatlist.get(k).getSeat();
 					    System.out.printf("%-30s %-30s %-30s\n", fullname, id, seat);
@@ -272,7 +271,7 @@ public class Main implements ActionListener, ItemListener {
 			   }  
 		   }      
 	   }
-	   
+	   //toggle the button between book and unbook
 		public void itemStateChanged(ItemEvent e) {
 			
 			JToggleButton btn = (JToggleButton) e.getItem();

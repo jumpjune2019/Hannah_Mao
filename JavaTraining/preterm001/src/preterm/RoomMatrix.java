@@ -2,7 +2,6 @@ package preterm;
 
 public class RoomMatrix {
 
-	
 	private int column=10;   //columns 1 to 10
 	private int row=10;      //rows A to J
 	private int dataCount;     //matrix[row][columns]
@@ -31,7 +30,7 @@ public class RoomMatrix {
 	 
 	    //print out column labels
 		for (int k = 1; k < 11; k++) 
-		 System.out.printf("%-9s","\t" + "  Seat"+k);
+		 System.out.printf("%-15s","\t" + "Seat "+k);
 		 System.out.println();
 		 
 		 for(int x = 0; x < 161; x++)
@@ -41,6 +40,7 @@ public class RoomMatrix {
 		   
 		   System.out.print("\n");
 		 
+		   //print out clients assigned to seats
 		for (int i = 0; i < Roommatrix.length; i++) {
 			
 			//print out row label

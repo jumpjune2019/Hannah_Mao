@@ -4,42 +4,28 @@ package preterm002;
 
 public class Seat {
 	
-	private String fullname;
-	private int id;
+	private String lastname;
+	private String firstname;
+    private int id;
     int row;
     int col;
+    boolean canBeAssigned=true;
 
     
-	public Seat(String f, int i, int r , int c) {
+	public Seat(String f, String l, int i, int r , int c) {
 		
-		fullname = f;
+		firstname = f;
+		lastname=l;
 		id = i;	
 		row =r;
 		col= c;
+		//canBeAssigned=a;
 		
 	}
 	
 	public Seat() {
 		
 	}
-	
-	public void printSeating(Client Clientcopy[]) {
-		
-		int count=0;
-		Client[] assignClient = new Client[25];
-		Seat[] seatingList= new Seat[25];
-		
-		for (int j=0; j<assignClient.length;j++) {
-			assignClient[j]= Clientcopy[j];
-		}
-		
-		for(int i=0; i<seatingList.length;i++) {
-			
-			 System.out.print(seatingList[i].getID()+seatingList[i].getSeat()+ seatingList[i].getFullname());
-		  
-		}	
-	}
-	
 	
 	void setSeat( int newrow, int newcol) {
 		this.row = newrow;
@@ -50,11 +36,7 @@ public class Seat {
 	void setID(int newid) {
 		this.id= newid;
 	}
-	
-	void setFullname(String newname) {
-		this.fullname= newname;
-	}
-	
+		
 	String getID() {
 		
 		if(this.id<10) {
@@ -65,10 +47,12 @@ public class Seat {
 		}else {
 			
 			String ID = Integer.toString(id);
-			return ID;
-			
-		}
-				
+			return ID;	
+		}			
+	}
+	
+	boolean getCanBeAssigned() {
+		return canBeAssigned;
 	}
 	
 	
@@ -82,8 +66,23 @@ public class Seat {
 	
 	String getFullname() {
 		
-		return fullname;
+		String full = (firstname + " "+ lastname);
+		return full;
 		
-	}			
+	}	
+	
+      String getInitialIDString() {
+		
+		if(id<10) {
+		String full = ("id:" + '0'+id + "/" + firstname.charAt(0) + lastname.charAt(0));
+		return full;
+		}
+		else {
+			String full = ("id:" + id + "/" + firstname.charAt(0) + lastname.charAt(0));
+			
+			return full;
+			
+		}
+    }
 }
 

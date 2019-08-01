@@ -23,24 +23,7 @@ public class Seat {
 		
 	}
 	
-	public void printSeating(Client Clientcopy[]) {
-		
-		int count=0;
-		Client[] assignClient = new Client[25];
-		Seat[] seatingList= new Seat[25];
-		
-		for (int j=0; j<assignClient.length;j++) {
-			assignClient[j]= Clientcopy[j];
-		}
-		
-		for(int i=0; i<seatingList.length;i++) {
-			
-			 System.out.print(seatingList[i].getID()+seatingList[i].getSeat()+ seatingList[i].getFullname());
-		  
-		}	
-	}
-	
-	
+
 	void setSeat( int newrow, int newcol) {
 		this.row = newrow;
 		this.col= newcol;
@@ -67,8 +50,7 @@ public class Seat {
 			String ID = Integer.toString(id);
 			return ID;
 			
-		}
-				
+		}		
 	}
 	
 	

@@ -62,10 +62,10 @@ public class Client {
 			
 			return full;
 			
-		}
-		
-				
+		}			
 	}
+	
+	
 }
 	
 

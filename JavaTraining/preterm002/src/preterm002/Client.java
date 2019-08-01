@@ -15,6 +15,8 @@ public class Client {
 	public Client() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	int getClientId() {
 		return id;
@@ -39,7 +41,6 @@ public class Client {
 		String full = ("id: " + id + " lastname: " + lastname + " firstname: " + firstname);
 		return full;
 			
-		
 	}
 	
 	String getFullname() {
