@@ -38,15 +38,13 @@ public class Client {
 	String getFullClientString() {
 		String full = ("id: " + id + " lastname: " + lastname + " firstname: " + firstname);
 		return full;
-			
-		
+				
 	}
 	
 	String getFullname() {
 		String full = ( firstname + " "+ lastname);
 		return full;
 			
-		
 	}
 	
 	
@@ -64,8 +62,7 @@ public class Client {
 			
 		}			
 	}
-	
-	
+		
 }
 	
 

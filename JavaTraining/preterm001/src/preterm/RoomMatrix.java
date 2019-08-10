@@ -4,10 +4,10 @@ public class RoomMatrix {
 
 	private int column=10;   //columns 1 to 10
 	private int row=10;      //rows A to J
-	private int dataCount;     //matrix[row][columns]
-	private boolean canBeAssigned;
+	private int dataCount;    
 	
-	String[][] Roommatrix=new String[10][10];  
+	
+	String[][] Roommatrix=new String[10][10];   //matrix[row][columns]
 	 
 	public RoomMatrix() {
 				
@@ -71,7 +71,7 @@ public class RoomMatrix {
 		
 		System.out.println();	
 		
-		System.out.println("- display list of clients with seat assignment\n");
+	    System.out.println("- display list of clients with seat assignment\n");
 		
 		 System.out.printf( "%-30s %-30s %-30s\n","Client","ID","Seat");
 		 //print horizontal line
